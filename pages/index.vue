@@ -1,68 +1,40 @@
 <template>
-  <div class="container">
+  <div>
+    <Header />
+
     <div>
-      <logo />
-      <h1 class="title">
-        whitenote
-      </h1>
-      <h2 class="subtitle">
-        My splendiferous Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <ul>
+        <li v-for="(post, index) in posts" :key="index">
+          <div>{{ post.id }}</div>
+          <div>{{ post.title }}</div>
+          <div>{{ post.contents }}</div>
+          <div>{{ post.eyecatch }}</div>
+          <div>{{ post.post_date }}</div>
+          <div>{{ post.categorys }}</div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import axios from 'axios'
+import Header from '~/components/Header.vue'
 
 export default {
   components: {
-    Logo
+    Header
+  },
+  head() {
+    return {
+      title: ''
+    }
+  },
+  async asyncData({ params }) {
+    const { data } = await axios.get(`http://siropaca.net:4000/api/v1/posts`)
+    return { posts: data }
   }
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
+<style></style>
