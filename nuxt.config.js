@@ -12,6 +12,10 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        'http-equiv': 'X-UA-Compatible',
+        content: 'IE=edge'
       }
     ],
     link: [
@@ -20,6 +24,12 @@ export default {
       {
         rel: 'apple-touch-icon-precomposed',
         href: '/whitenote/apple-touch-icon-precomposed.png'
+      }
+    ],
+    script: [
+      {
+        src: 'https://kit.fontawesome.com/edecfa6e4c.js',
+        crossorigin: 'anonymous'
       }
     ]
   },

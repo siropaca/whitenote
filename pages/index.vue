@@ -2,6 +2,9 @@
   <div>
     <Header />
 
+    <i class="fab fa-android"></i>
+    <i class="fab fa-500px"></i>
+
     <PostList :posts="posts" />
   </div>
 </template>
