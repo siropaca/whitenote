@@ -14,7 +14,11 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/whitenote/favicon.ico' },
+      { rel: 'apple-touch-icon', href: '/whitenote/apple-touch-icon.png' },
+      { rel: 'apple-touch-icon-precomposed', href: '/whitenote/apple-touch-icon-precomposed.png' }
+    ]
   },
   /*
    ** Customize the progress-bar color
