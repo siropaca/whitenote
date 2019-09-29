@@ -5,11 +5,6 @@
 </template>
 
 <style>
-.header {
-  padding: 1rem;
-  font-size: 1.8rem;
-  letter-spacing: 2px;
-}
 .header .logo {
   height: 3rem;
 }
