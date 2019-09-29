@@ -63,6 +63,9 @@ export default {
      */
     extend(config, ctx) {}
   },
+  router: {
+    base: '/whitenote/'
+  },
   server: {
     port: 4001
   }
