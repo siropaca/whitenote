@@ -24,7 +24,7 @@ export default {
     }
   },
   async asyncData({ params }) {
-    const { data } = await axios.get('http://siropaca.net:4000/api/v1/posts')
+    const { data } = await axios.get('https://siropaca.net/api/v1/posts')
     return { posts: data }
   }
 }
