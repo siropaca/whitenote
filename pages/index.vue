@@ -2,8 +2,7 @@
   <div>
     <Header />
 
-    <i class="fab fa-android"></i>
-    <i class="fab fa-500px"></i>
+    <nuxt-link to="/category">かてごりー</nuxt-link>
 
     <PostList :posts="posts" />
   </div>
