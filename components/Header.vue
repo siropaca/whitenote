@@ -1,6 +1,8 @@
 <template>
   <div class="header">
-    <img src="~/assets/images/logo.svg" alt="WhiteNote" class="logo" />
+    <nuxt-link to="/">
+      <img src="~/assets/images/logo.svg" alt="WhiteNote" class="logo" />
+    </nuxt-link>
   </div>
 </template>
 
