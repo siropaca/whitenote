@@ -2,7 +2,7 @@
   <div>
     <Header />
 
-    <nuxt-link to="/categorys">かてごりーページ</nuxt-link>
+    <nuxt-link :to="{ name: 'categorys' }">かてごりーページ</nuxt-link>
 
     <PostList :posts="posts" />
   </div>

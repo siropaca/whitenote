@@ -4,7 +4,7 @@
       <nuxt-link :to="{ name: 'id', params: { id: post.id } }">
         <div>{{ post.id }}</div>
         <div>{{ post.title }}</div>
-        <div>{{ post.contents }}</div>
+        <!-- <div>{{ post.contents }}</div> -->
         <div>
           <div><img :src="post.url" :alt="post.alt" /></div>
         </div>
