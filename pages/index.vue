@@ -4,7 +4,9 @@
 
     <nuxt-link :to="{ name: 'categorys' }">かてごりーページ</nuxt-link>
 
-    <PostList :posts="posts" />
+    <div class="content">
+      <PostList :posts="posts" />
+    </div>
   </div>
 </template>
 

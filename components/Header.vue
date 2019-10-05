@@ -6,11 +6,12 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 .header {
   padding: 0.5rem;
-}
-.header .logo {
-  height: 1.5rem;
+
+  .logo {
+    height: 1.5rem;
+  }
 }
 </style>
