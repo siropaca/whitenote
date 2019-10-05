@@ -2,6 +2,7 @@
 @import './settings/setting';
 
 /** tools */
+@import './tools/mixins';
 
 /** generic */
 @import './generic/reset';
@@ -10,8 +11,11 @@
 @import './elements/global';
 
 /** objects */
+@import './objects/layout';
 
 /** components */
 @import './components/header';
+@import './components/footer';
+@import './components/postlist';
 
 /** trumps */

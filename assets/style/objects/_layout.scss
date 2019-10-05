@@ -1,0 +1,11 @@
+.o-container {
+}
+
+.o-inner {
+  width: 100%;
+  margin: auto;
+
+  @include media($breakpoint-pc) {
+    width: $container-width;
+  }
+}

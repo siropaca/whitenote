@@ -1,0 +1,14 @@
+.c-footer {
+  padding: 2.5rem 0;
+  color: $color-white;
+  background-color: #232b33;
+
+  .social-buttons {
+    text-align: center;
+
+    .fab {
+      font-size: 1.7rem;
+      margin: 0 1rem;
+    }
+  }
+}

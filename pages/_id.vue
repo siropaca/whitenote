@@ -1,19 +1,14 @@
 <template>
   <div>
-    <Header />
-
     <div>{{ post }}</div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-import Header from '~/components/Header.vue'
 
 export default {
-  components: {
-    Header
-  },
+  components: {},
   validate({ params }) {
     return /^\d+$/.test(params.id)
   },

@@ -1,7 +1,29 @@
 .c-header {
-  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.9rem;
+  height: 3.5rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: $color-white;
+
+  @include media($container-width) {
+    padding: 0;
+  }
+
+  .header-contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .fas {
+      font-size: 1.5rem;
+    }
+  }
 
   .logo {
-    height: 1.5rem;
+    height: 1.3rem;
   }
 }

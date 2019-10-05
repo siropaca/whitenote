@@ -1,23 +1,21 @@
 <template>
   <div>
-    <Header />
+    <!-- <nuxt-link :to="{ name: 'categorys' }">かてごりーページ</nuxt-link> -->
 
-    <nuxt-link :to="{ name: 'categorys' }">かてごりーページ</nuxt-link>
-
-    <div class="content">
-      <PostList :posts="posts" />
+    <div class="o-container">
+      <div class="o-inner">
+        <PostList :posts="posts" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-import Header from '~/components/Header.vue'
 import PostList from '~/components/PostList.vue'
 
 export default {
   components: {
-    Header,
     PostList
   },
   head() {

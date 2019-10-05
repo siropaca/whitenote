@@ -1,0 +1,11 @@
+.c-postliset {
+  padding: 0 0.9rem;
+
+  img {
+    width: 100%;
+  }
+
+  @include media($breakpoint-pc) {
+    padding: 0;
+  }
+}
