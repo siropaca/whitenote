@@ -12,8 +12,11 @@ import Header from '~/components/Header.vue'
 export default {
   components: {
     Header
+  },
+  head() {
+    return {
+      title: `カテゴリー - `
+    }
   }
 }
 </script>
-
-<style></style>
