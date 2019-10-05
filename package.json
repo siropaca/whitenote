@@ -13,6 +13,10 @@
     "fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
   },
+  "browserslist": [
+    "ie >= 11",
+    "last 2 versions"
+  ],
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "nuxt": "^2.0.0"
