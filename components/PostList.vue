@@ -1,5 +1,5 @@
 <template>
-  <ul class="c-post-list">
+  <ul class="c-postlist">
     <li v-for="(post, index) in posts" :key="index" class="_item">
       <nuxt-link :to="{ name: 'id', params: { id: post.id } }">
         <img :src="post.url" :alt="post.alt" />

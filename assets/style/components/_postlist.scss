@@ -1,5 +1,5 @@
-.c-post-list {
-  padding: 0 0.9rem;
+.c-postlist {
+  padding: 0.5rem 1.2rem 1.5rem 1.2rem;
 
   a {
     display: block;
@@ -21,6 +21,10 @@
     margin-bottom: 1.5rem;
     border-radius: 8px;
     overflow: hidden;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     ._title {
       font-weight: bold;
