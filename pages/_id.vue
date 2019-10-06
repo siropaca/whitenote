@@ -1,14 +1,17 @@
 <template>
   <div>
-    <div>{{ post }}</div>
+    <PostEntry :post="post" />
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import PostEntry from '~/components/PostEntry.vue'
 
 export default {
-  components: {},
+  components: {
+    PostEntry
+  },
   validate({ params }) {
     return /^\d+$/.test(params.id)
   },

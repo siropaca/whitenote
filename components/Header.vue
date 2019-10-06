@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- main -->
     <header class="c-header">
       <div class="o-inner">
         <div class="header-contents">
@@ -11,6 +12,8 @@
         </div>
       </div>
     </header>
+
+    <!-- dummy -->
     <div class="c-dummy-header"></div>
   </div>
 </template>
