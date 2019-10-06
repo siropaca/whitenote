@@ -2,11 +2,12 @@
   display: flex;
   align-items: center;
   padding: 0 0.9rem;
-  height: 3.5rem;
+  height: $header-height;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  z-index: 10;
   background-color: $color-white;
 
   @include media($container-width) {
@@ -26,4 +27,8 @@
   .logo {
     height: 1.3rem;
   }
+}
+
+.c-dummy-header {
+  height: $header-height;
 }

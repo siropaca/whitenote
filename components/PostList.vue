@@ -1,13 +1,12 @@
 <template>
-  <ul class="c-postliset">
-    <li v-for="(post, index) in posts" :key="index">
+  <ul class="c-post-list">
+    <li v-for="(post, index) in posts" :key="index" class="post-item">
       <nuxt-link :to="{ name: 'id', params: { id: post.id } }">
-        <div>{{ post.title }}</div>
-        <div>
-          <div><img :src="post.url" :alt="post.alt" /></div>
+        <img :src="post.url" :alt="post.alt" />
+        <div class="post-info">
+          <h2 class="title">{{ post.title }}</h2>
+          <time class="date">{{ post.post_date | fmtDate }}</time>
         </div>
-        <div>{{ post.post_date }}</div>
-        <div>{{ post.categorys }}</div>
       </nuxt-link>
     </li>
   </ul>
@@ -15,6 +14,12 @@
 
 <script>
 export default {
+  filters: {
+    fmtDate(date) {
+      const today = new Date(date)
+      return `${today.getFullYear()}/${today.getMonth()}/${today.getDate()}`
+    }
+  },
   props: {
     posts: {
       type: Array,
