@@ -1,12 +1,18 @@
 <template>
   <main class="c-postentry">
-    <h1 class="_title">{{ post.title }}</h1>
-    <time class="_date">{{ post.post_date | fmtDate }}</time>
-    <div>{{ post.categorys }}</div>
+    <div class="_info">
+      <h1 class="_title">{{ post.title }}</h1>
+      <time class="_date">{{ post.post_date | fmtDate }}</time>
+      <div v-html="createCategoryTag(post.categorys)"></div>
+    </div>
+
     <div class="_eyecatch">
       <img :src="post.url" :alt="post.alt" />
     </div>
-    <div>{{ post.contents }}</div>
+
+    <div class="_body">
+      <div v-html="post.contents"></div>
+    </div>
   </main>
 </template>
 
@@ -24,6 +30,14 @@ export default {
       default: () => {
         return {}
       }
+    }
+  },
+  methods: {
+    createCategoryTag: (categorys) => {
+      return categorys
+        .split(',')
+        .map((item) => `<span>${item}</span>`)
+        .join('')
     }
   }
 }

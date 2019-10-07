@@ -1,20 +1,45 @@
 .c-postentry {
 
   ._eyecatch {
+    // margin: 0.5rem 0 2rem 0;
 
     img {
       width: 100%;
     }
   }
 
+  ._info {
+    padding: 0 1rem;
+    margin: 0.5rem 0 1rem 0;
+  }
+
   ._title {
-    font-weight: bold;
-    font-size: 2rem;
+    font-weight: 500;
+    font-size: 1.5rem;
   }
 
   ._date {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     opacity: 0.8;
     letter-spacing: 1px;
+  }
+
+  ._body {
+    padding: 2rem 1rem;
+    line-height: 1.8;
+
+    h2 {
+      margin: 2rem 0 0.5rem 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }
