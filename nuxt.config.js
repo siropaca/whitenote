@@ -57,8 +57,14 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    // Doc: https://github.com/markdown-it/markdown-it
+    '@nuxtjs/markdownit'
   ],
+  markdownit: {
+    injected: true,
+    html: true,
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
