@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <PostEntry :post="post" />
+  <div class="o-container">
+    <div class="o-inner">
+      <PostEntry :post="post" />
+    </div>
   </div>
 </template>
 

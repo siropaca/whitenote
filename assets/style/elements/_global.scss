@@ -21,4 +21,9 @@ img {
 
 a {
   display: inline-block;
+  color: $color-primarily;
+
+  :visited {
+    color: $color-primarily;
+  }
 }
