@@ -3,7 +3,7 @@
     <!-- <nuxt-link :to="{ name: 'categorys' }">かてごりーページ</nuxt-link> -->
 
     <div class="o-container">
-      <div class="o-inner">
+      <div class="o-inner -m">
         <PostList :posts="posts" />
       </div>
     </div>

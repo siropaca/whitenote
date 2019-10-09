@@ -1,9 +1,5 @@
 <template>
-  <div class="o-container">
-    <div class="o-inner">
-      <PostEntry :post="post" />
-    </div>
-  </div>
+  <PostEntry :post="post" />
 </template>
 
 <script>

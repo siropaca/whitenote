@@ -1,19 +1,13 @@
 <template>
   <div>
-    <!-- main -->
     <header class="c-header">
-      <div class="o-inner">
+      <div class="o-inner -m">
         <div class="header-contents">
           <nuxt-link :to="{ name: 'index' }">
             <img src="~/assets/images/logo.svg" alt="WhiteNote" class="logo" />
           </nuxt-link>
-
-          <i class="fas fa-bars"></i>
         </div>
       </div>
     </header>
-
-    <!-- dummy -->
-    <div class="c-dummy-header"></div>
   </div>
 </template>

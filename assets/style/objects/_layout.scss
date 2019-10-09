@@ -6,6 +6,16 @@
   margin: auto;
 
   @include media($breakpoint-pc) {
-    width: $container-width;
+    &.-s {
+      width: $container-width-s;
+    }
+
+    &.-m {
+      width: $container-width-m;
+    }
+
+    &.-l {
+      width: $container-width-l;
+    }
   }
 }
