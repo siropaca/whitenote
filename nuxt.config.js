@@ -25,12 +25,6 @@ export default {
         rel: 'apple-touch-icon-precomposed',
         href: '/whitenote/apple-touch-icon-precomposed.png'
       }
-    ],
-    script: [
-      {
-        src: 'https://kit.fontawesome.com/edecfa6e4c.js',
-        crossorigin: 'anonymous'
-      }
     ]
   },
   /*
@@ -41,8 +35,9 @@ export default {
    ** Global CSS
    */
   css: [
+    '~/node_modules/highlight.js/styles/hopscotch.css',
+    '~/node_modules/@fortawesome/fontawesome-free/css/all.min.css',
     '~/assets/style/main.scss',
-    '~/node_modules/highlight.js/styles/hopscotch.css'
   ],
   /*
    ** Plugins to load before mounting the App
