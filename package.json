@@ -20,6 +20,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/markdownit": "^1.2.7",
+    "highlight.js": "^9.15.10",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {

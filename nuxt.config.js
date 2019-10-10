@@ -40,7 +40,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/style/main.scss'],
+  css: [
+    '~/assets/style/main.scss',
+    '~/node_modules/highlight.js/styles/hopscotch.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -64,6 +67,13 @@ export default {
   markdownit: {
     injected: true,
     html: true,
+    highlight: (str, lang) => {
+      const hljs = require('highlight.js')
+      const langType = lang && hljs.getLanguage(lang) ? lang : 'plaintext'
+      return `<pre class="hljs"><code>${
+        hljs.highlight(langType, str, true).value
+      }</code></pre>`
+    }
   },
   /*
    ** Axios module configuration
