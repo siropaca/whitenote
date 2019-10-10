@@ -1,22 +1,22 @@
-/** settings */
+//--- settings ---
 @import './settings/setting';
 
-/** tools */
+//--- tools ---
 @import './tools/mixins';
 
-/** generic */
+//--- generic ---
 @import './generic/reset';
 
-/** elements */
+//--- elements ---
 @import './elements/global';
 
-/** objects */
+//--- objects ---
 @import './objects/layout';
 
-/** components */
+//--- components ---
 @import './components/header';
 @import './components/footer';
 @import './components/postlist';
 @import './components/postentry';
 
-/** trumps */
+//--- trumps ---

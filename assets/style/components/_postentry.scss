@@ -1,5 +1,5 @@
 .c-postentry {
-  /** アイキャッチ */
+  //--- eyecatch ---
   ._postheader {
     padding-top: 55%;
     height: 0;
@@ -35,7 +35,7 @@
       bottom: 0;
       right: 0;
       padding: 2rem 1rem 0.8rem;
-      line-height: 1.3;
+      line-height: 1.35;
       background: -webkit-gradient(
         linear,
         left top,
@@ -76,7 +76,7 @@
     }
   }
 
-  /** 記事本文 */
+  //--- entry ---
   ._postbody {
     padding: 2rem 1rem;
     line-height: 1.8;
