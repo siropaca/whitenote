@@ -3,32 +3,33 @@
   right: 1rem;
   bottom: 1rem;
   left: 1rem;
-  display: flex;
-  justify-content: space-around;
-  border-radius: 20px;
-  padding: 0.4rem 0;
-  overflow: hidden;
-  z-index: 0;
-  font-size: 1.2rem;
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  animation: show 0.3s;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  ._contents {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 0;
+    font-size: 1.2rem;
+    border-color: rgba(223,225,229,0);
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
     background-color: $color-white;
-    opacity: 0.8;
-    z-index: -1;
-  }
-
-  a {
-    color: inherit;
+    opacity: 0.9;
   }
 
   ._item {
+    color: inherit;
     cursor: pointer;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@keyframes show{
+  from{
+      opacity: 0;
+  }
+  to{
+      opacity: 1;
   }
 }
