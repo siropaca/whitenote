@@ -161,7 +161,8 @@
         font-weight: bold;
       }
 
-      th, td {
+      th,
+      td {
         padding: 0.5rem 0.8rem;
         border: solid 1px $color-middlegray;
       }
@@ -178,12 +179,35 @@
       padding: 1rem 1.25rem;
       background-color: #282c34;
       overflow: auto;
+      position: relative;
 
       @include media($breakpoint-pc) {
         margin: auto;
         line-height: 1.6;
         border-radius: 6px;
         padding: 1.25rem 1.5rem;
+      }
+
+      &[data-tip] {
+        padding-top: 2.7rem;
+      }
+
+      ._codetip {
+        display: inline-block;
+        position: absolute;
+        top: 0.9rem;
+        left: 0.6rem;
+        padding: 0 0.6rem;
+        letter-spacing: 1px;
+        font-size: 0.75rem;
+        line-height: 1.7;
+        border-radius: 15px;
+        color: $color-white;
+        background: linear-gradient(135deg, #179fcf 0%, #2c4ff7 100%);
+
+        @include media($breakpoint-pc) {
+          left: 0.85rem;
+        }
       }
     }
   }
