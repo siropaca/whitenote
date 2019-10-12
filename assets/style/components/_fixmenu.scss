@@ -1,0 +1,34 @@
+.c-fixmenu {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 20px;
+  padding: 0.4rem 0;
+  overflow: hidden;
+  z-index: 0;
+  font-size: 1.2rem;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $color-white;
+    opacity: 0.8;
+    z-index: -1;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  ._item {
+    cursor: pointer;
+  }
+}
