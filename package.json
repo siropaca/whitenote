@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "NUXT_HOST=0.0.0.0 nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "nohup nuxt start &",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
@@ -15,13 +15,15 @@
   },
   "browserslist": [
     "ie >= 11",
-    "last 2 versions"
+    "last 2 versions",
+    "android >= 4.4"
   ],
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/markdownit": "^1.2.7",
     "highlight.js": "^9.15.10",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",

@@ -37,7 +37,7 @@ export default {
   css: [
     '~/node_modules/highlight.js/styles/hopscotch.css',
     '~/node_modules/@fortawesome/fontawesome-free/css/all.min.css',
-    '~/assets/style/main.scss',
+    '~/assets/style/main.scss'
   ],
   /*
    ** Plugins to load before mounting the App
