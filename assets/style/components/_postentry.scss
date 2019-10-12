@@ -52,12 +52,20 @@
       ._title {
         font-weight: bold;
         font-size: 1.5rem;
+
+        @include media($breakpoint-pc) {
+          font-size: 1.7rem;
+        }
       }
 
       ._date {
         font-size: 0.8rem;
-        letter-spacing: 0.18rem;
+        letter-spacing: 3px;
         opacity: 0.8;
+
+        @include media($breakpoint-pc) {
+          font-size: 0.9rem;
+        }
       }
 
       ._categorys {
@@ -67,11 +75,18 @@
       ._catitem {
         color: $color-white;
         text-decoration: none;
-        font-size: 0.7rem;
-        padding: 0.15rem 0.4rem;
+        font-size: 0.65rem;
+        padding: 0.15rem 0.5rem;
         margin-right: 0.6rem;
         border: solid 1px $color-white;
         border-radius: 5px;
+        letter-spacing: 1px;
+        opacity: 0.85;
+
+        .fas {
+          font-size: 0.55rem;
+          margin-right: 0.2rem;
+        }
       }
     }
   }
@@ -86,14 +101,20 @@
       padding-left: 0;
     }
 
+    *:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    *:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
     h2 {
       margin: 2rem 0 0.5rem 0;
       font-size: 1.2rem;
       font-weight: bold;
-
-      &:first-child {
-        margin-top: 0;
-      }
     }
 
     p {

@@ -15,7 +15,7 @@
               class="_catitem"
               href="#"
             >
-              {{ category }}
+              <i class="fas fa-tag"></i>{{ category }}
             </a>
           </div>
         </div>
