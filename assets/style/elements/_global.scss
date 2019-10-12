@@ -32,6 +32,8 @@ img {
 a {
   display: inline-block;
   color: $color-primarily;
+  outline: none;
+  -webkit-tap-highlight-color:transparent;
 
   :visited {
     color: $color-primarily;
