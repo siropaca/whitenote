@@ -101,12 +101,12 @@
       padding-left: 0;
     }
 
-    *:first-child {
+    > *:first-child {
       margin-top: 0;
       padding-top: 0;
     }
 
-    *:last-child {
+    > *:last-child {
       margin-bottom: 0;
       padding-bottom: 0;
     }
@@ -117,12 +117,32 @@
       font-weight: bold;
     }
 
+    > ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.6rem;
+
+      li {
+        list-style: disc;
+        margin: 0.2rem 0;
+
+        ul {
+          padding-left: 1.5rem;
+        }
+      }
+    }
+
     p {
       margin-bottom: 1.5rem;
 
       &:last-child {
         margin-bottom: 0;
       }
+    }
+
+    blockquote {
+      border-left: solid 0.3rem $color-black;
+      padding: 0.3rem 1rem;
+      opacity: 0.5;
     }
 
     //--- hljs ---

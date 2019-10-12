@@ -24,9 +24,7 @@
 
     <div class="o-container">
       <div class="o-inner -s">
-        <div class="_postbody">
-          <div v-html="$md.render(post.contents)"></div>
-        </div>
+        <div class="_postbody" v-html="$md.render(post.contents)"></div>
       </div>
     </div>
   </main>
