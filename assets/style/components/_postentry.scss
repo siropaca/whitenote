@@ -137,12 +137,38 @@
       &:last-child {
         margin-bottom: 0;
       }
+
+      code {
+        background-color: $color-lightgray;
+        padding: 0.1rem 0.3rem;
+        border-radius: 4px;
+      }
     }
 
     blockquote {
-      border-left: solid 0.3rem $color-black;
+      border-left: solid 0.3rem $color-lightgray;
       padding: 0.3rem 1rem;
-      opacity: 0.5;
+      color: $color-gray;
+    }
+
+    table {
+      display: block;
+      overflow: auto;
+      margin-bottom: 1.5rem;
+      border-collapse: collapse;
+
+      th {
+        font-weight: bold;
+      }
+
+      th, td {
+        padding: 0.5rem 0.8rem;
+        border: solid 1px $color-middlegray;
+      }
+
+      tbody tr:nth-child(odd) {
+        background-color: $color-lightgray;
+      }
     }
 
     //--- hljs ---
