@@ -2,7 +2,7 @@
   <div v-show="showMenu" class="c-fixmenu">
     <div class="o-inner -s">
       <div class="_contents">
-        <nuxt-link :to="{ name: '/' }" class="_item">
+        <nuxt-link to="/" class="_item">
           <i class="fas fa-home"></i>
         </nuxt-link>
         <span class="_item">
