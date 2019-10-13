@@ -2,7 +2,7 @@
   <div v-show="showMenu" class="c-fixmenu">
     <div class="o-inner -s">
       <div class="_contents">
-        <nuxt-link to="/" class="_item">
+        <nuxt-link :to="{ name: '/' }" class="_item">
           <i class="fas fa-home"></i>
         </nuxt-link>
         <span class="_item">
@@ -23,7 +23,7 @@
 import smoothscroll from 'smoothscroll-polyfill'
 
 export default {
-  data: () => {
+  data() {
     return {
       position: 0,
       showMenu: true
@@ -37,16 +37,20 @@ export default {
   mounted() {
     smoothscroll.polyfill()
 
-    window.addEventListener('scroll', () => {
-      this.position = window.scrollY
-    })
+    window.addEventListener('scroll', this.onScroll)
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
-    toPagetop: () => {
+    toPagetop() {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       })
+    },
+    onScroll() {
+      this.position = window.scrollY
     }
   }
 }
