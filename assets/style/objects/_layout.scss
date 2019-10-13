@@ -7,15 +7,15 @@
 
   @include media($breakpoint-pc) {
     &.-s {
-      width: $container-width-s;
+      max-width: $container-width-s;
     }
 
     &.-m {
-      width: $container-width-m;
+      max-width: $container-width-m;
     }
 
     &.-l {
-      width: $container-width-l;
+      max-width: $container-width-l;
     }
   }
 }

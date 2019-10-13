@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <!-- <nuxt-link :to="{ name: 'categorys' }">かてごりーページ</nuxt-link> -->
-
-    <div class="o-container">
-      <div class="o-inner -m">
+  <div class="o-container">
+    <div class="o-inner -m">
+      <main>
         <PostList :posts="posts" />
-      </div>
+      </main>
     </div>
   </div>
 </template>

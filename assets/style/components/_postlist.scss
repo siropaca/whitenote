@@ -2,27 +2,40 @@
   padding: 0.5rem 1.2rem 1.5rem 1.2rem;
 
   @include media($breakpoint-pc) {
-    padding: 0.5rem 0 1.5rem 0;
-  }
-
-  a {
-    display: block;
-    color: $color-white;
-    text-decoration: none;
-  }
-
-  img {
-    width: 100%;
+    padding: 0.5rem 0;
   }
 
   ._item {
-    position: relative;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    overflow: hidden;
+    margin-bottom: 1.4rem;
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @include media($breakpoint-pc) {
+      display: inline-block;
+      padding: 0 0.7rem;
+      width: 33.3%;
+    }
+
+    a {
+      display: block;
+      color: $color-white;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      height: 0;
+      padding-top: 56%;
+      border-radius: 8px;
+    }
+
+    img {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      object-fit: cover;
     }
 
     ._info {
