@@ -23,9 +23,15 @@ export default {
       title: ''
     }
   },
-  async asyncData({ params }) {
-    const { data } = await axios.get('https://siropaca.net/api/v1/posts')
-    return { posts: data }
+  asyncData({ params, error }) {
+    return axios
+      .get('https://siropaca.net/api/v1/posts')
+      .then((res) => {
+        return { posts: res.data }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'ページが見つかりません' })
+      })
   }
 }
 </script>

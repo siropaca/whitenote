@@ -1,14 +1,20 @@
 <template>
-  <PostEntry :post="post" />
+  <div>
+    <PostEntry :post="post" />
+
+    <Fixmenu />
+  </div>
 </template>
 
 <script>
 import axios from 'axios'
 import PostEntry from '~/components/PostEntry.vue'
+import Fixmenu from '~/components/Fixmenu.vue'
 
 export default {
   components: {
-    PostEntry
+    PostEntry,
+    Fixmenu
   },
   validate({ params }) {
     return /^\d+$/.test(params.id)
@@ -18,11 +24,15 @@ export default {
       title: `${this.post.title} - `
     }
   },
-  async asyncData({ params }) {
-    const { data } = await axios.get(
-      `https://siropaca.net/api/v1/posts?id=${params.id}`
-    )
-    return { post: data }
+  asyncData({ params, error }) {
+    return axios
+      .get(`https://siropaca.net/api/v1/posts?id=${params.id}`)
+      .then((res) => {
+        return { post: res.data }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'ページが見つかりません' })
+      })
   }
 }
 </script>
