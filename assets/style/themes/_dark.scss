@@ -1,0 +1,29 @@
+#dark {
+  background-color: $color-dark-gray;
+  color: $color-white;
+
+  .logo {
+    &.-black {
+      display: none;
+    }
+
+    &.-white {
+      display: block;
+    }
+  }
+
+  .c-postentry ._postbody {
+    p code {
+      background-color: $color-dark-lightgray;
+    }
+
+    table tbody tr:nth-child(odd) {
+      background-color: $color-dark-lightgray;
+    }
+  }
+
+  .c-fixmenu ._contents {
+    background-color: $color-dark-middlegray;
+    opacity: 0.95;
+  }
+}

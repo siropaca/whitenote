@@ -1,12 +1,16 @@
 //--- colors ---
 $color-white: #fff;
 $color-black: #333;
+$color-primarily: #2c75b6;
 
 $color-gray: #8d9199;
 $color-middlegray: lighten($color-black, 55%);
 $color-lightgray: lighten($color-black, 73%);
 
-$color-primarily: #2c75b6;
+// Dark Mode
+$color-dark-gray: #15202A;
+$color-dark-middlegray: #182734;
+$color-dark-lightgray: #243341;
 
 //--- breakpoint ---
 $breakpoint-pc: 768px;

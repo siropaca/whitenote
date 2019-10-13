@@ -23,6 +23,10 @@
     cursor: pointer;
     padding: 0.4rem 0.8rem;
     -webkit-tap-highlight-color: transparent;
+
+    &.-active {
+      color: $color-primarily;
+    }
   }
 }
 

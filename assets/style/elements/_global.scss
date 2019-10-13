@@ -11,6 +11,8 @@ body {
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  transition-duration: 0.3s;
+  transition-property: background-color, color;
 }
 
 *,

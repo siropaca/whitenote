@@ -1,17 +1,34 @@
 <template>
   <div v-show="showMenu" class="c-fixmenu">
     <div class="o-inner -s">
+      <!-- home -->
       <div class="_contents">
-        <nuxt-link to="/" class="_item">
+        <nuxt-link
+          to="/"
+          class="_item"
+          @mousedown="onMousedown"
+          @mouseup="onMouseup"
+        >
           <i class="fas fa-home"></i>
         </nuxt-link>
-        <span class="_item">
+
+        <!-- darkmode -->
+        <span class="_item" @click="changeMode">
           <i class="fas fa-lightbulb"></i>
         </span>
+
+        <!-- outline -->
         <span class="_item">
           <i class="fas fa-stream"></i>
         </span>
-        <span class="_item" @click="toPagetop">
+
+        <!-- pagetop -->
+        <span
+          class="_item"
+          @click="toPagetop"
+          @mousedown="onMousedown"
+          @mouseup="onMouseup"
+        >
           <i class="fas fa-level-up-alt"></i>
         </span>
       </div>
@@ -49,8 +66,26 @@ export default {
         behavior: 'smooth'
       })
     },
+    onMousedown(e) {
+      e.currentTarget.classList.add('-active')
+    },
+    onMouseup(e) {
+      const target = e.currentTarget
+      setTimeout(() => {
+        target.classList.remove('-active')
+      }, 250)
+    },
     onScroll() {
       this.position = window.scrollY
+    },
+    changeMode(e) {
+      if (document.getElementById('dark')) {
+        document.body.removeAttribute('id', 'dark')
+      } else {
+        document.body.setAttribute('id', 'dark')
+      }
+
+      e.currentTarget.classList.toggle('-active')
     }
   }
 }
