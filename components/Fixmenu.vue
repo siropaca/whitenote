@@ -48,6 +48,8 @@ export default {
   },
   watch: {
     position(newPosi, oldPosi) {
+      if (Math.abs(newPosi - oldPosi) < 10) return
+
       this.showMenu = newPosi < oldPosi || false
     }
   },
