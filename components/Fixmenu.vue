@@ -43,12 +43,13 @@ export default {
   data() {
     return {
       position: 0,
-      showMenu: true
+      showMenu: true,
+      threshold: 10
     }
   },
   watch: {
     position(newPosi, oldPosi) {
-      if (Math.abs(newPosi - oldPosi) < 10) return
+      if (Math.abs(newPosi - oldPosi) < this.threshold) return
 
       this.showMenu = newPosi < oldPosi || false
     }
