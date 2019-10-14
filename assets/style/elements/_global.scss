@@ -32,11 +32,11 @@ a {
   outline: none;
   -webkit-tap-highlight-color:transparent;
 
-  :hover {
+  &:hover {
     color: $color-primarily;
   }
 
-  :visited {
+  &:visited {
     color: $color-primarily;
   }
 }

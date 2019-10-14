@@ -5,6 +5,12 @@
   left: 1rem;
   animation: show 0.3s;
 
+  a {
+    &:hover {
+      color: inherit !important;
+    }
+  }
+
   ._contents {
     display: flex;
     justify-content: space-around;
