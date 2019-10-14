@@ -13,7 +13,7 @@
         </nuxt-link>
 
         <!-- darkmode -->
-        <span class="_item" @click="changeMode">
+        <span id="js-darkbtn" class="_item" @click="changeMode">
           <i class="fas fa-moon"></i>
         </span>
 
@@ -81,14 +81,17 @@ export default {
     onScroll() {
       this.position = window.scrollY
     },
-    changeMode(e) {
-      if (document.getElementById('dark')) {
-        document.body.removeAttribute('id', 'dark')
-      } else {
-        document.body.setAttribute('id', 'dark')
-      }
+    changeMode() {
+      const body = document.body
+      const darkBtn = document.getElementById('js-darkbtn')
 
-      e.currentTarget.classList.toggle('-active')
+      if (document.getElementById('dark')) {
+        body.removeAttribute('id', 'dark')
+        darkBtn.classList.remove('-active')
+      } else {
+        body.setAttribute('id', 'dark')
+        darkBtn.classList.add('-active')
+      }
     }
   }
 }
