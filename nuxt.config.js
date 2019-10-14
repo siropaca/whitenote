@@ -76,7 +76,7 @@ export default {
     },
     use: [
       // Doc: https://www.npmjs.com/package/markdown-it-attrs
-      'markdown-it-attrs',
+      'markdown-it-attrs'
     ]
   },
   /*
