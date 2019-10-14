@@ -14,7 +14,7 @@
 
         <!-- darkmode -->
         <span class="_item" @click="changeMode">
-          <i class="fas fa-lightbulb"></i>
+          <i class="fas fa-moon"></i>
         </span>
 
         <!-- outline -->
