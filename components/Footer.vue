@@ -13,7 +13,7 @@
         </a>
       </div>
 
-      <div class="_copyright">©︎ 2019 All rights reserved - Siropaca</div>
+      <div class="_copyright">©︎ 2019 - All rights reserved - Siropaca</div>
     </div>
   </footer>
 </template>
