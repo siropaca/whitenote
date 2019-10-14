@@ -34,7 +34,7 @@
       left: 0;
       bottom: 0;
       right: 0;
-      padding: 2rem 1rem 1rem;
+      padding: 2rem 1rem 0.5rem;
       line-height: 1.35;
       background: -webkit-gradient(
         linear,
@@ -63,6 +63,7 @@
         letter-spacing: 3px;
         opacity: 0.8;
         margin-top: 0.2rem;
+        margin-bottom: 0.3rem;
 
         @include media($breakpoint-pc) {
           font-size: 0.9rem;
@@ -87,10 +88,10 @@
         border-radius: 5px;
         letter-spacing: 1px;
         opacity: 0.85;
+        margin-bottom: 0.3rem;
 
-        .fas {
+        i {
           font-size: 0.55rem;
-          margin-right: 0.2rem;
         }
       }
     }
