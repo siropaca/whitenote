@@ -93,8 +93,22 @@
 
   //--- entry ---
   ._postbody {
-    padding: 2rem 1rem;
+    $side-padding: 1rem;
+
+    padding: 2rem $side-padding;
     line-height: 1.8;
+
+    .-full {
+      margin-right: -$side-padding !important;
+      margin-left: -$side-padding !important;
+    }
+
+    @include media($breakpoint-pc) {
+      .-full {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+    }
 
     @include media($breakpoint-pc) {
       padding-right: 0;
@@ -131,6 +145,21 @@
       }
     }
 
+    hr {
+      border: none;
+      line-height: 1;
+      margin: 2.7rem 0 2.4rem 0;
+      text-align: center;
+      font-size: 1.7rem;
+      color: $color-middlegray;
+      letter-spacing: 1.4rem;
+      text-indent: 1.4rem;
+
+      &::before {
+        content: "***";
+      }
+    }
+
     p {
       margin-bottom: 1.5rem;
 
@@ -148,6 +177,10 @@
       a {
         margin-right: 0.1rem;
       }
+    }
+
+    img {
+      width: 100%;
     }
 
     blockquote {
@@ -179,7 +212,7 @@
 
     //--- hljs ---
     .hljs {
-      margin: 1.5rem -1rem;
+      margin: 1.5rem 0;
       line-height: 1.5;
       padding: 1rem 1.25rem;
       background-color: #282c34;
@@ -189,7 +222,6 @@
       @include media($breakpoint-pc) {
         margin: auto;
         line-height: 1.6;
-        border-radius: 6px;
         padding: 1.25rem 1.5rem;
       }
 
@@ -197,7 +229,8 @@
         padding-top: 2.7rem;
       }
 
-      ._codetip {
+      &[data-tip]::before {
+        content: attr(data-tip);
         display: inline-block;
         position: absolute;
         top: 0.9rem;
@@ -209,6 +242,7 @@
         border-radius: 15px;
         color: $color-white;
         background: linear-gradient(135deg, #179fcf 0%, #2c4ff7 100%);
+        // background:linear-gradient(135deg, #E9D54D 0%,#DF9D28 100%);
 
         @include media($breakpoint-pc) {
           left: 0.85rem;
