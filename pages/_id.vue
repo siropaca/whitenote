@@ -17,7 +17,11 @@ export default {
     Fixmenu
   },
   validate({ params }) {
-    return /^\d+$/.test(params.id)
+    if (!/^\d+$/.test(params.id)) {
+      throw new Error('正しいURLを入力してください')
+    }
+
+    return true
   },
   head() {
     return {
