@@ -32,6 +32,10 @@ a {
   outline: none;
   -webkit-tap-highlight-color:transparent;
 
+  :hover {
+    color: $color-primarily;
+  }
+
   :visited {
     color: $color-primarily;
   }
