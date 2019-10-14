@@ -56,24 +56,28 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    // Doc: https://github.com/markdown-it/markdown-it
+    // Doc: https://www.npmjs.com/package/markdown-it
     '@nuxtjs/markdownit'
   ],
   markdownit: {
     injected: true,
+    linkify: true,
     html: true,
     highlight: (str, lang) => {
       const hljs = require('highlight.js')
       const langAry = lang.split('.')
       const isFilename = langAry.length === 2
       const ext = isFilename ? langAry[1] : lang
-      const tip = isFilename ? `<span class="_codetip">${lang}</span>` : ''
-      const data = tip ? `data-tip="${lang}"` : ''
+      const data = isFilename ? `data-tip="${lang}"` : ''
       const type = lang && hljs.getLanguage(ext) ? ext : 'plaintext'
-      return `<pre class="hljs" ${data}>${tip}<code>${
+      return `<pre class="hljs -full" ${data}><code>${
         hljs.highlight(type, str, true).value
       }</code></pre>`
-    }
+    },
+    use: [
+      // Doc: https://www.npmjs.com/package/markdown-it-attrs
+      'markdown-it-attrs',
+    ]
   },
   /*
    ** Axios module configuration
