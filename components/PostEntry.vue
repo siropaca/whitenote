@@ -8,14 +8,15 @@
         <div class="o-inner -m">
           <h1 class="_title">{{ post.title }}</h1>
           <time class="_date">{{ post.post_date | fmtDate }}</time>
-          <div class="_categorys">
+          <div v-if="post.categorys" class="_categorys">
             <a
               v-for="(category, index) in makeCatAry(post.categorys)"
               :key="index"
               class="_catitem"
               href="#"
             >
-              <i class="fas fa-tag"></i>{{ category }}
+              <i class="fas fa-tag"></i>
+              {{ category }}
             </a>
           </div>
         </div>
@@ -24,7 +25,10 @@
 
     <div class="o-container">
       <div class="o-inner -s">
-        <div class="_postbody" v-html="$md.render(post.contents)"></div>
+        <div
+          class="_postbody js-postbody"
+          v-html="$md.render(post.contents)"
+        ></div>
       </div>
     </div>
   </main>
@@ -46,9 +50,31 @@ export default {
       }
     }
   },
+  mounted() {
+    const self = this
+    self.getATag().forEach((el) => {
+      el.addEventListener('click', self.openNewWin)
+    })
+  },
+  destroyed() {
+    const self = this
+    self.getATag().forEach((el) => {
+      el.removeEventListener('click', self.openNewWin)
+    })
+  },
   methods: {
-    makeCatAry: (categorys) => {
+    makeCatAry(categorys) {
       return categorys ? categorys.split(',') : []
+    },
+    getATag() {
+      return document
+        .getElementsByClassName('js-postbody')[0]
+        .querySelectorAll('a')
+    },
+    openNewWin(e) {
+      e.preventDefault()
+      const url = e.target.getAttribute('href')
+      window.open(url)
     }
   }
 }
