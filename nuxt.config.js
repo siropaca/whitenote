@@ -1,3 +1,6 @@
+const axios = require('axios')
+require('dotenv').config()
+
 export default {
   mode: 'universal',
   /*
@@ -8,13 +11,16 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'format-detection', content: 'telephone=no, email=no, address=no' },
+      {
+        name: 'format-detection',
+        content: 'telephone=no, email=no, address=no'
+      },
       {
         hid: 'description',
         name: 'description',
         content: ''
       },
-      {'http-equiv': 'X-UA-Compatible', content: 'IE=edge'}
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/whitenote/favicon.ico' },
@@ -40,9 +46,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    { src: '~plugins/ga.js', ssr: false }
-  ],
+  plugins: [{ src: '~plugins/ga.js', ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -59,24 +63,35 @@ export default {
     // Doc: https://www.npmjs.com/package/markdown-it
     '@nuxtjs/markdownit',
     // Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    [
+      '@nuxtjs/dotenv',
+      {
+        path: './config/',
+        filename: process.env.NODE_ENV == 'production' ? '.env.prod' : '.env.dev'
+      }
+    ]
   ],
+  env: {
+    HOGE: process.env.HOGE
+  },
   sitemap: {
     hostname: 'https://siropaca.net/whitenote',
     path: '/sitemap.xml',
     exclude: [],
-    routes (callback) {
-      const axios = require('axios')
-      axios.get('https://siropaca.net/api/v1/posts')
-      .then((res) => {
-        var routes = res.data.map((posts) => {
-          return '/posts/' + posts.id
+    routes(callback) {
+      axios
+        .get('https://siropaca.net/api/v1/posts')
+        .then((res) => {
+          var routes = res.data.map((posts) => {
+            return '/posts/' + posts.id
+          })
+          callback(null, routes)
         })
-        callback(null, routes)
-      })
-      .catch(callback)
+        .catch(callback)
     },
-    filter ({ routes }) {
+    filter({ routes }) {
       return routes.map((route) => {
         route.url = `whitenote${route.url}`
         return route
