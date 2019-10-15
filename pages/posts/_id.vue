@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PostEntry :post="post" />
+    <PostDetail :post="post" />
 
     <Fixmenu />
   </div>
@@ -8,12 +8,12 @@
 
 <script>
 import axios from 'axios'
-import PostEntry from '~/components/PostEntry.vue'
+import PostDetail from '~/components/PostDetail.vue'
 import Fixmenu from '~/components/Fixmenu.vue'
 
 export default {
   components: {
-    PostEntry,
+    PostDetail,
     Fixmenu
   },
   validate({ params }) {

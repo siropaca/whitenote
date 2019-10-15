@@ -1,12 +1,12 @@
 <template>
-  <main class="c-postentry">
+  <main class="c-postdetail">
     <div class="_postheader">
       <img :src="post.url" :alt="post.alt" />
       <div class="_filter"></div>
 
       <div class="_postinfo">
         <div class="o-inner -m">
-          <h1 class="_title" v-html="post.title"></h1>
+          <h1 class="_title">{{ post.title }}</h1>
           <time class="_date">{{ post.post_date | fmtDate }}</time>
           <div v-if="post.categorys" class="_categorys">
             <a

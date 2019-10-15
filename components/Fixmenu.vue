@@ -4,7 +4,7 @@
       <!-- home -->
       <div class="_contents">
         <nuxt-link
-          to="/"
+          :to="{ name: 'index' }"
           class="_item"
           @mousedown="onMousedown"
           @mouseup="onMouseup"
