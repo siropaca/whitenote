@@ -18,9 +18,10 @@
 @import './components/footer';
 @import './components/postlist';
 @import './components/postentry';
-@import './components/_fixmenu';
+@import './components/fixmenu';
 
 //--- themes ---
-@import './themes/_dark';
+@import './themes/dark';
 
 //--- trumps ---
+@import './trumps/utilitys';
