@@ -68,11 +68,17 @@ export default {
       axios.get('https://siropaca.net/api/v1/posts')
       .then((res) => {
         var routes = res.data.map((posts) => {
-          return '/whitenote/posts/' + posts.id
+          return '/posts/' + posts.id
         })
         callback(null, routes)
       })
       .catch(callback)
+    },
+    filter ({ routes }) {
+      return routes.map((route) => {
+        route.url = `whitenote${route.url}`
+        return route
+      })
     }
   },
   markdownit: {
