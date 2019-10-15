@@ -64,6 +64,7 @@ export default {
     path: '/sitemap.xml',
     exclude: [],
     routes (callback) {
+      const axios = require('axios')
       axios.get('https://siropaca.net/api/v1/posts')
       .then((res) => {
         var routes = res.data.map((posts) => {
