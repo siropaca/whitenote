@@ -8,15 +8,13 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'format-detection', content: 'telephone=no, email=no, address=no' },
       {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
       },
-      {
-        'http-equiv': 'X-UA-Compatible',
-        content: 'IE=edge'
-      }
+      {'http-equiv': 'X-UA-Compatible', content: 'IE=edge'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/whitenote/favicon.ico' },
@@ -57,8 +55,25 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://www.npmjs.com/package/markdown-it
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    // Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
+    '@nuxtjs/sitemap'
   ],
+  sitemap: {
+    hostname: 'https://siropaca.net/whitenote',
+    path: '/sitemap.xml',
+    exclude: [],
+    routes (callback) {
+      axios.get('https://siropaca.net/api/v1/posts')
+      .then((res) => {
+        var routes = res.data.map((posts) => {
+          return '/posts/' + posts.id
+        })
+        callback(null, routes)
+      })
+      .catch(callback)
+    }
+  },
   markdownit: {
     injected: true,
     linkify: true,

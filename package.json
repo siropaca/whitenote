@@ -21,6 +21,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/markdownit": "^1.2.7",
+    "@nuxtjs/sitemap": "^2.0.0",
     "highlight.js": "^9.15.10",
     "markdown-it-attrs": "^3.0.1",
     "nuxt": "^2.0.0",
