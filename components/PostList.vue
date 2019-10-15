@@ -4,7 +4,7 @@
       <nuxt-link :to="{ name: 'id', params: { id: post.id } }">
         <img :src="post.url" :alt="post.alt" />
         <div class="_info">
-          <h2 class="_title">{{ post.title }}</h2>
+          <h2 class="_title" v-html="post.title"></h2>
           <time class="_date">{{ post.post_date | fmtDate }}</time>
         </div>
       </nuxt-link>
