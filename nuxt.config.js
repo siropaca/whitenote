@@ -68,7 +68,7 @@ export default {
       axios.get('https://siropaca.net/api/v1/posts')
       .then((res) => {
         var routes = res.data.map((posts) => {
-          return '/posts/' + posts.id
+          return '/whitenote/posts/' + posts.id
         })
         callback(null, routes)
       })
