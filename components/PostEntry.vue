@@ -6,7 +6,7 @@
 
       <div class="_postinfo">
         <div class="o-inner -m">
-          <h1 class="_title">{{ post.title }}</h1>
+          <h1 class="_title" v-html="post.title"></h1>
           <time class="_date">{{ post.post_date | fmtDate }}</time>
           <div v-if="post.categorys" class="_categorys">
             <a

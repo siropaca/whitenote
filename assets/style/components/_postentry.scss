@@ -53,6 +53,10 @@
         font-weight: bold;
         font-size: 1.5rem;
 
+        > span {
+          display: inline-block;
+        }
+
         @include media($breakpoint-pc) {
           font-size: 1.7rem;
         }
@@ -102,23 +106,13 @@
     $side-padding: 1rem;
 
     padding: 2rem $side-padding;
-    line-height: 2;
-
-    .-full {
-      margin-right: -$side-padding !important;
-      margin-left: -$side-padding !important;
-    }
-
-    @include media($breakpoint-pc) {
-      .-full {
-        margin-right: 0 !important;
-        margin-left: 0 !important;
-      }
-    }
+    line-height: 1.8;
+    word-break: break-word;
 
     @include media($breakpoint-pc) {
       padding-right: 0;
       padding-left: 0;
+      line-height: 2;
     }
 
     > *:first-child {
@@ -129,6 +123,16 @@
     > *:last-child {
       margin-bottom: 0;
       padding-bottom: 0;
+    }
+
+    .-full {
+      margin-right: -$side-padding !important;
+      margin-left: -$side-padding !important;
+
+      @include media($breakpoint-pc) {
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+      }
     }
 
     h2 {
