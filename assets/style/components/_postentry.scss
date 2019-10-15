@@ -108,6 +108,7 @@
     padding: 2rem $side-padding;
     line-height: 1.8;
     word-break: break-word;
+    overflow: hidden;
 
     @include media($breakpoint-pc) {
       padding-right: 0;
