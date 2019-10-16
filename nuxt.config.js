@@ -76,10 +76,12 @@ export default {
   sitemap: {
     hostname: 'https://siropaca.net/whitenote',
     path: '/sitemap.xml',
-    exclude: [],
+    exclude: [
+      '/categorys'
+    ],
     routes(callback) {
       axios
-        .get(process.env.GET_POSTS_API_URL)
+        .get('https://siropaca.net/api/v1/posts')
         .then((res) => {
           var routes = res.data.map((posts) => {
             return '/posts/' + posts.id
