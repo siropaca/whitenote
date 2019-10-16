@@ -73,16 +73,13 @@ export default {
       }
     ]
   ],
-  env: {
-    HOGE: process.env.HOGE
-  },
   sitemap: {
     hostname: 'https://siropaca.net/whitenote',
     path: '/sitemap.xml',
     exclude: [],
     routes(callback) {
       axios
-        .get('https://siropaca.net/api/v1/posts')
+        .get(process.env.GET_POSTS_API_URL)
         .then((res) => {
           var routes = res.data.map((posts) => {
             return '/posts/' + posts.id

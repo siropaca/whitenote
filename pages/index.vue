@@ -23,7 +23,7 @@ export default {
   },
   asyncData({ params, error }) {
     return axios
-      .get('https://siropaca.net/api/v1/posts')
+      .get(process.env.GET_POSTS_API_URL)
       .then((res) => {
         return { posts: res.data }
       })
