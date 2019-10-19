@@ -250,13 +250,12 @@
       position: relative;
 
       @include media($breakpoint-pc) {
-        margin: auto;
         line-height: 1.6;
         padding: 1.25rem 1.5rem;
       }
 
       &[data-tip] {
-        padding-top: 2.7rem;
+        padding-top: 3rem;
       }
 
       &[data-tip]::before {
