@@ -20,7 +20,11 @@ export default {
         name: 'description',
         content: ''
       },
-      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
+      {
+        name: 'google-site-verification',
+        content: 'MVMDNQVr5eFOn_a11sAFxAqVEyz2jjfKYa98b2CYwgM'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/whitenote/favicon.ico' },
