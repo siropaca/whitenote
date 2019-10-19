@@ -1,4 +1,4 @@
-const axios = require('axios')
+import axios from 'axios'
 require('dotenv').config()
 
 export default {
@@ -10,7 +10,7 @@ export default {
     titleTemplate: '%sWhiteNote',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-widthf, initial-scale=1' },
       {
         name: 'format-detection',
         content: 'telephone=no, email=no, address=no'
@@ -62,32 +62,26 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    // Doc: https://www.npmjs.com/package/markdown-it
-    '@nuxtjs/markdownit',
     // Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
     '@nuxtjs/sitemap',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    [
-      '@nuxtjs/dotenv',
-      {
-        path: './config/',
-        filename: process.env.NODE_ENV == 'production' ? '.env.prod' : '.env.dev'
-      }
-    ]
+    '@nuxtjs/dotenv',
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    // Doc: https://github.com/nuxt-community/style-resources-module
+    '@nuxtjs/style-resources',
+    // Doc: https://www.npmjs.com/package/markdown-it
+    '@nuxtjs/markdownit',
   ],
   sitemap: {
     hostname: 'https://siropaca.net/whitenote',
     path: '/sitemap.xml',
-    exclude: [
-      '/categorys'
-    ],
+    exclude: ['/categorys'],
     routes(callback) {
       axios
         .get('https://siropaca.net/api/v1/posts')
         .then((res) => {
-          var routes = res.data.map((posts) => {
+          const routes = res.data.map((posts) => {
             return '/posts/' + posts.id
           })
           callback(null, routes)
@@ -100,6 +94,17 @@ export default {
         return route
       })
     }
+  },
+  dotenv: {
+    path: './config/',
+    filename: process.env.NODE_ENV === 'production' ? '.env.prod' : '.env.dev'
+  },
+  axios: {},
+  styleResources: {
+    scss: [
+      '~/assets/style/settings/_setting.scss',
+      '~/assets/style/tools/_mixins.scss'
+    ]
   },
   markdownit: {
     injected: true,
@@ -122,11 +127,6 @@ export default {
     ]
   },
   /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: {},
-  /*
    ** Build configuration
    */
   build: {
@@ -144,8 +144,5 @@ export default {
   },
   router: {
     base: '/whitenote/'
-  },
-  server: {
-    port: 4001
   }
 }
