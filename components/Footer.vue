@@ -17,3 +17,30 @@
     </div>
   </footer>
 </template>
+
+<style lang="scss">
+.c-footer {
+  padding: 1rem 0;
+  background-color: $color-footer-bg;
+  color: $color-gray;
+  text-align: center;
+
+  ._socials {
+    margin: 1rem 0;
+
+    a {
+      color: inherit;
+    }
+
+    .fab {
+      font-size: 1.7rem;
+      margin: 0 1rem;
+    }
+  }
+
+  ._copyright {
+    margin-top: 1rem 0;
+    font-size: 0.8rem;
+  }
+}
+</style>

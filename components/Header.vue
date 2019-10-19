@@ -18,3 +18,35 @@
     </div>
   </header>
 </template>
+
+<style lang="scss">
+.c-header {
+  display: flex;
+  align-items: center;
+  padding: 0 0.9rem;
+  height: $header-height;
+
+  @include media($container-width-m) {
+    padding: 0;
+  }
+
+  .header-contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .fas {
+      font-size: 1.5rem;
+      margin: 0 0.4rem;
+    }
+  }
+
+  .logo {
+    height: 1.3rem;
+
+    &.-white {
+      display: none;
+    }
+  }
+}
+</style>

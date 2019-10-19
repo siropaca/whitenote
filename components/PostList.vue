@@ -30,3 +30,91 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.c-postlist {
+  padding: 0.5rem 1.2rem 1.5rem 1.2rem;
+
+  @include media($breakpoint-pc) {
+    padding: 0.5rem 0;
+  }
+
+  ._item {
+    margin-bottom: 1.4rem;
+    overflow: hidden;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media($breakpoint-pc) {
+      display: inline-block;
+      padding: 0 0.7rem;
+      width: 33.3%;
+
+      &:last-child {
+        margin-bottom: 1.4rem;
+      }
+    }
+
+    a {
+      display: block;
+      color: $color-white;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      height: 0;
+      padding-top: 55%;
+      border-radius: 8px;
+
+      :hover {
+        color: inherit;
+      }
+    }
+
+    img {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      object-fit: cover;
+    }
+
+    ._info {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      padding: 2rem 1rem 0.8rem;
+      line-height: 1.4;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.65) 100%
+      );
+
+      ._title {
+        font-weight: bold;
+        font-size: 1.1rem;
+
+        @include media($breakpoint-pc) {
+          font-size: 1rem;
+        }
+      }
+
+      ._date {
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+        opacity: 0.8;
+
+        @include media($breakpoint-pc) {
+          font-size: 0.7rem;
+          line-height: 1rem;
+          margin-top: 0.1rem;
+        }
+      }
+    }
+  }
+}
+</style>
