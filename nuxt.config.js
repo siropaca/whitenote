@@ -144,5 +144,8 @@ export default {
   },
   router: {
     base: '/whitenote/'
+  },
+  server: {
+    port: 4001
   }
 }
