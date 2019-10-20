@@ -229,7 +229,7 @@ export default {
     }
 
     &[data-tip] {
-      padding-top: 3rem;
+      padding-top: 2.6rem;
     }
 
     &[data-tip]::before {

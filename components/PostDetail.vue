@@ -62,7 +62,6 @@ export default {
 
 <style lang="scss">
 .c-postdetail {
-  //--- eyecatch ---
   ._postheader {
     padding-top: 55%;
     height: 0;
