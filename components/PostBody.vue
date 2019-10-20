@@ -70,9 +70,23 @@ export default {
     margin: 2rem 0 0.5rem 0;
     font-size: 1.2rem;
     font-weight: bold;
+    position: relative;
+    padding-left: 1rem;
+
+    &::before {
+      content: '';
+      width: 0.4rem;
+      background-color: $color-primarily;
+      position: absolute;
+      top: 0.3rem;
+      bottom: 0.3rem;
+      left: 0;
+      margin: auto;
+    }
   }
 
   h3 {
+    font-size: 1.1rem;
     margin: 2rem 0 0.5rem 0;
     font-weight: bold;
   }
@@ -115,13 +129,6 @@ export default {
 
     &:last-child {
       margin-bottom: 0;
-    }
-
-    code {
-      background-color: $color-lightgray;
-      padding: 0.1rem 0.3rem;
-      border-radius: 4px;
-      margin-right: 0.1rem;
     }
 
     a {
@@ -180,18 +187,45 @@ export default {
     }
   }
 
+  dl {
+    margin-bottom: 1.5rem;
+
+    dt {
+      font-weight: 600;
+    }
+
+    dd {
+      padding-left: 1rem;
+    }
+  }
+
+  code {
+    background-color: $color-lightgray;
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+    margin-right: 0.1rem;
+  }
+
   //--- hljs ---
   .hljs {
     margin: 1.5rem 0;
-    line-height: 1.5;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
     padding: 1rem 1.25rem;
     background-color: #282c34;
     overflow: auto;
     position: relative;
 
     @include media($breakpoint-pc) {
-      line-height: 1.6;
+      line-height: 1.7;
       padding: 1.25rem 1.5rem;
+    }
+
+    code {
+      background-color: transparent;
+      padding: 0;
+      border-radius: 0;
+      margin-right: 0;
     }
 
     &[data-tip] {
