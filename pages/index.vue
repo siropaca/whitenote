@@ -18,7 +18,14 @@ export default {
   },
   head() {
     return {
-      title: ''
+      title: '',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        }
+      ]
     }
   },
   asyncData({ params, error }) {

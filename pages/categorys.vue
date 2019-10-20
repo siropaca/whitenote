@@ -9,7 +9,14 @@ export default {
   components: {},
   head() {
     return {
-      title: `カテゴリー - `
+      title: `カテゴリー - `,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        }
+      ]
     }
   }
 }

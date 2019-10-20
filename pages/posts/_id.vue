@@ -25,7 +25,14 @@ export default {
   },
   head() {
     return {
-      title: `${this.post.title} - `
+      title: `${this.post.title} - `,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.post.description}`
+        }
+      ]
     }
   },
   asyncData({ params, error }) {
