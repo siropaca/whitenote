@@ -43,7 +43,6 @@ export default {
    ** Global CSS
    */
   css: [
-    '~/node_modules/highlight.js/styles/hopscotch.css',
     '~/node_modules/@fortawesome/fontawesome-free/css/all.min.css',
     '~/assets/style/main.scss'
   ],

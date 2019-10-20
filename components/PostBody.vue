@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import '~/node_modules/highlight.js/styles/hopscotch.css'
+
 export default {
   props: {
     contents: {
