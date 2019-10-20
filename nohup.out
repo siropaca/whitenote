@@ -1,0 +1,471 @@
+
+> whitenote@1.0.0 start /var/www/whitenote
+> nuxt start
+
+
+ FATAL  No build files found in /var/www/whitenote/.nuxt/dist/server.
+Use either `nuxt build` or `builder.build()` or start nuxt in development mode.
+
+  Use either `nuxt build` or `builder.build()` or start nuxt in development mode.
+  at VueRenderer._ready (node_modules/@nuxt/vue-renderer/dist/vue-renderer.js:4215:13)
+  at async Server.ready (node_modules/@nuxt/server/dist/server.js:606:5)
+  at async Nuxt._init (node_modules/@nuxt/core/dist/core.js:647:7)
+
+
+   ╭─────────────────────────────────────────────────────────────────────────────────────╮
+   │                                                                                     │
+   │   ✖ Nuxt Fatal Error                                                                │
+   │                                                                                     │
+   │   Error: No build files found in /var/www/whitenote/.nuxt/dist/server.              │
+   │   Use either `nuxt build` or `builder.build()` or start nuxt in development mode.   │
+   │                                                                                     │
+   ╰─────────────────────────────────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! whitenote@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the whitenote@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/shirai/.npm/_logs/2019-10-10T13_03_33_965Z-debug.log
+
+> whitenote@1.0.0 start /var/www/whitenote
+> nuxt start
+
+
+ FATAL  No build files found in /var/www/whitenote/.nuxt/dist/server.
+Use either `nuxt build` or `builder.build()` or start nuxt in development mode.
+
+  Use either `nuxt build` or `builder.build()` or start nuxt in development mode.
+  at VueRenderer._ready (node_modules/@nuxt/vue-renderer/dist/vue-renderer.js:4215:13)
+  at async Server.ready (node_modules/@nuxt/server/dist/server.js:606:5)
+  at async Nuxt._init (node_modules/@nuxt/core/dist/core.js:647:7)
+
+
+   ╭─────────────────────────────────────────────────────────────────────────────────────╮
+   │                                                                                     │
+   │   ✖ Nuxt Fatal Error                                                                │
+   │                                                                                     │
+   │   Error: No build files found in /var/www/whitenote/.nuxt/dist/server.              │
+   │   Use either `nuxt build` or `builder.build()` or start nuxt in development mode.   │
+   │                                                                                     │
+   ╰─────────────────────────────────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! whitenote@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the whitenote@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/shirai/.npm/_logs/2019-10-10T13_03_58_873Z-debug.log
+
+> whitenote@1.0.0 start /var/www/whitenote
+> nuxt start
+
+ℹ Listening on: http://localhost:4001/whitenote/
+
+> whitenote@1.0.0 start /var/www/whitenote
+> nuxt start
+
+ℹ Listening on: http://localhost:4001/whitenote/
+
+> whitenote@1.0.0 start /var/www/whitenote
+> nuxt start
+
+
+ FATAL  Address localhost:4001 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1226:14)
+  at listenInCluster (net.js:1274:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1413:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:65:10)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:4001` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! whitenote@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the whitenote@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/shirai/.npm/_logs/2019-10-12T04_03_21_739Z-debug.log
+
+ ERROR  Request failed with status code 503
+
+  at createError (node_modules/axios/lib/core/createError.js:16:15)
+  at settle (node_modules/axios/lib/core/settle.js:17:12)
+  at IncomingMessage.handleStreamEnd (node_modules/axios/lib/adapters/http.js:237:11)
+  at IncomingMessage.emit (events.js:201:15)
+  at IncomingMessage.EventEmitter.emit (domain.js:471:20)
+  at endReadableNT (_stream_readable.js:1130:12)
+  at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+
+ ERROR  Request failed with status code 503
+
+  at createError (node_modules/axios/lib/core/createError.js:16:15)
+  at settle (node_modules/axios/lib/core/settle.js:17:12)
+  at IncomingMessage.handleStreamEnd (node_modules/axios/lib/adapters/http.js:237:11)
+  at IncomingMessage.emit (events.js:201:15)
+  at IncomingMessage.EventEmitter.emit (domain.js:471:20)
+  at endReadableNT (_stream_readable.js:1130:12)
+  at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+
+> whitenote@1.0.0 start /var/www/whitenote
+> nuxt start
+
+
+ FATAL  Address localhost:4001 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1226:14)
+  at listenInCluster (net.js:1274:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1413:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:65:10)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:4001` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! whitenote@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the whitenote@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/shirai/.npm/_logs/2019-10-12T04_03_43_851Z-debug.log
+
+ ERROR  Request failed with status code 503
+
+  at createError (node_modules/axios/lib/core/createError.js:16:15)
+  at settle (node_modules/axios/lib/core/settle.js:17:12)
+  at IncomingMessage.handleStreamEnd (node_modules/axios/lib/adapters/http.js:237:11)
+  at IncomingMessage.emit (events.js:201:15)
+  at IncomingMessage.EventEmitter.emit (domain.js:471:20)
+  at endReadableNT (_stream_readable.js:1130:12)
+  at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+Terminated
+npm ERR! code ELIFECYCLE
+npm ERR! errno 143
+npm ERR! whitenote@1.0.0 start: `nuxt start`
+npm ERR! Exit status 143
+npm ERR! 
+npm ERR! Failed at the whitenote@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/shirai/.npm/_logs/2019-10-12T04_04_01_046Z-debug.log
+
+> whitenote@1.0.0 start /var/www/whitenote
+> nuxt start
+
+ℹ Listening on: http://localhost:4001/whitenote/
+
+> whitenote@1.0.0 start /var/www/whitenote
+> nuxt start
+
+ℹ Listening on: http://localhost:4001/whitenote/
+Terminated
+npm ERR! code ELIFECYCLE
+npm ERR! errno 143
+npm ERR! whitenote@1.0.0 start: `nuxt start`
+npm ERR! Exit status 143
+npm ERR! 
+npm ERR! Failed at the whitenote@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/shirai/.npm/_logs/2019-10-12T09_03_43_472Z-debug.log
+ℹ Listening on: http://localhost:4001/whitenote/
+
+ FATAL  Address localhost:4001 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1226:14)
+  at listenInCluster (net.js:1274:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1413:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:65:10)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:4001` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+
+ FATAL  Address localhost:4001 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1226:14)
+  at listenInCluster (net.js:1274:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1413:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:65:10)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:4001` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+
+ ERROR  Request failed with status code 503
+
+  at createError (node_modules/axios/lib/core/createError.js:16:15)
+  at settle (node_modules/axios/lib/core/settle.js:17:12)
+  at IncomingMessage.handleStreamEnd (node_modules/axios/lib/adapters/http.js:237:11)
+  at IncomingMessage.emit (events.js:201:15)
+  at IncomingMessage.EventEmitter.emit (domain.js:471:20)
+  at endReadableNT (_stream_readable.js:1130:12)
+  at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+
+ ERROR  Request failed with status code 503
+
+  at createError (node_modules/axios/lib/core/createError.js:16:15)
+  at settle (node_modules/axios/lib/core/settle.js:17:12)
+  at IncomingMessage.handleStreamEnd (node_modules/axios/lib/adapters/http.js:237:11)
+  at IncomingMessage.emit (events.js:201:15)
+  at IncomingMessage.EventEmitter.emit (domain.js:471:20)
+  at endReadableNT (_stream_readable.js:1130:12)
+  at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+
+ FATAL  Address localhost:4001 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1226:14)
+  at listenInCluster (net.js:1274:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1413:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:65:10)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:4001` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+
+ FATAL  Address localhost:4001 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1226:14)
+  at listenInCluster (net.js:1274:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1413:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:65:10)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:4001` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+
+ ERROR  Cannot read property 'replace' of undefined
+
+  at fmtDate (c1baba50a58156489407.js:1:0)
+  at c1baba50a58156489407.js:1:796
+  at a.pe [as _l] (node_modules/vue/dist/vue.runtime.common.prod.js:6:16187)
+  at a.<anonymous> (c1baba50a58156489407.js:1:0)
+  at a.t._render (node_modules/vue/dist/vue.runtime.common.prod.js:6:35273)
+  at node_modules/vue-server-renderer/build.prod.js:1:70663
+  at Yi (node_modules/vue-server-renderer/build.prod.js:1:67227)
+  at io (node_modules/vue-server-renderer/build.prod.js:1:70639)
+  at ro (node_modules/vue-server-renderer/build.prod.js:1:70270)
+  at _t.eo [as renderNode] (node_modules/vue-server-renderer/build.prod.js:1:67517)
+
+
+ FATAL  Address localhost:4001 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1226:14)
+  at listenInCluster (net.js:1274:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1413:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:65:10)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:4001` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+ℹ Listening on: http://localhost:4001/whitenote/
+
+ ERROR  Cannot read property 'replace' of undefined
+
+  at fmtDate (c1baba50a58156489407.js:1:0)
+  at c1baba50a58156489407.js:1:796
+  at a.pe [as _l] (node_modules/vue/dist/vue.runtime.common.prod.js:6:16187)
+  at a.<anonymous> (c1baba50a58156489407.js:1:0)
+  at a.t._render (node_modules/vue/dist/vue.runtime.common.prod.js:6:35273)
+  at node_modules/vue-server-renderer/build.prod.js:1:70663
+  at Yi (node_modules/vue-server-renderer/build.prod.js:1:67227)
+  at io (node_modules/vue-server-renderer/build.prod.js:1:70639)
+  at ro (node_modules/vue-server-renderer/build.prod.js:1:70270)
+  at _t.eo [as renderNode] (node_modules/vue-server-renderer/build.prod.js:1:67517)
+
+
+ ERROR  Cannot read property 'replace' of undefined
+
+  at fmtDate (c1baba50a58156489407.js:1:0)
+  at c1baba50a58156489407.js:1:796
+  at a.pe [as _l] (node_modules/vue/dist/vue.runtime.common.prod.js:6:16187)
+  at a.<anonymous> (c1baba50a58156489407.js:1:0)
+  at a.t._render (node_modules/vue/dist/vue.runtime.common.prod.js:6:35273)
+  at node_modules/vue-server-renderer/build.prod.js:1:70663
+  at Yi (node_modules/vue-server-renderer/build.prod.js:1:67227)
+  at io (node_modules/vue-server-renderer/build.prod.js:1:70639)
+  at ro (node_modules/vue-server-renderer/build.prod.js:1:70270)
+  at _t.eo [as renderNode] (node_modules/vue-server-renderer/build.prod.js:1:67517)
+
+
+ ERROR  Cannot read property 'replace' of undefined
+
+  at fmtDate (c1baba50a58156489407.js:1:0)
+  at c1baba50a58156489407.js:1:796
+  at a.pe [as _l] (node_modules/vue/dist/vue.runtime.common.prod.js:6:16187)
+  at a.<anonymous> (c1baba50a58156489407.js:1:0)
+  at a.t._render (node_modules/vue/dist/vue.runtime.common.prod.js:6:35273)
+  at node_modules/vue-server-renderer/build.prod.js:1:70663
+  at Yi (node_modules/vue-server-renderer/build.prod.js:1:67227)
+  at io (node_modules/vue-server-renderer/build.prod.js:1:70639)
+  at ro (node_modules/vue-server-renderer/build.prod.js:1:70270)
+  at _t.eo [as renderNode] (node_modules/vue-server-renderer/build.prod.js:1:67517) (repeated 1 times)
+
+
+ ERROR  Cannot read property 'replace' of undefined
+
+  at fmtDate (c1baba50a58156489407.js:1:0)
+  at c1baba50a58156489407.js:1:796
+  at a.pe [as _l] (node_modules/vue/dist/vue.runtime.common.prod.js:6:16187)
+  at a.<anonymous> (c1baba50a58156489407.js:1:0)
+  at a.t._render (node_modules/vue/dist/vue.runtime.common.prod.js:6:35273)
+  at node_modules/vue-server-renderer/build.prod.js:1:70663
+  at Yi (node_modules/vue-server-renderer/build.prod.js:1:67227)
+  at io (node_modules/vue-server-renderer/build.prod.js:1:70639)
+  at ro (node_modules/vue-server-renderer/build.prod.js:1:70270)
+  at _t.eo [as renderNode] (node_modules/vue-server-renderer/build.prod.js:1:67517)
+
+
+ ERROR  Cannot read property 'replace' of undefined
+
+  at fmtDate (c1baba50a58156489407.js:1:0)
+  at c1baba50a58156489407.js:1:796
+  at a.pe [as _l] (node_modules/vue/dist/vue.runtime.common.prod.js:6:16187)
+  at a.<anonymous> (c1baba50a58156489407.js:1:0)
+  at a.t._render (node_modules/vue/dist/vue.runtime.common.prod.js:6:35273)
+  at node_modules/vue-server-renderer/build.prod.js:1:70663
+  at Yi (node_modules/vue-server-renderer/build.prod.js:1:67227)
+  at io (node_modules/vue-server-renderer/build.prod.js:1:70639)
+  at ro (node_modules/vue-server-renderer/build.prod.js:1:70270)
+  at _t.eo [as renderNode] (node_modules/vue-server-renderer/build.prod.js:1:67517)
+
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+
+ ERROR  axios is not defined
+
+  at routes (nuxt.config.js:67:7)
+  at node_modules/@nuxtjs/sitemap/lib/cache.js:51:7
+  at new Promise (<anonymous>)
+  at promisifyRoute (node_modules/@nuxtjs/sitemap/lib/cache.js:50:12)
+  at AsyncCache.load [as _load] (node_modules/@nuxtjs/sitemap/lib/cache.js:18:28)
+  at AsyncCache.get (node_modules/async-cache/ac.js:63:8)
+  at internal/util.js:286:30
+  at new Promise (<anonymous>)
+  at AsyncCache.get (internal/util.js:285:12)
+  at node_modules/@nuxtjs/sitemap/lib/middleware.js:55:20
+
+
+ ERROR  axios is not defined
+
+  at routes (nuxt.config.js:67:7)
+  at node_modules/@nuxtjs/sitemap/lib/cache.js:51:7
+  at new Promise (<anonymous>)
+  at promisifyRoute (node_modules/@nuxtjs/sitemap/lib/cache.js:50:12)
+  at AsyncCache.load [as _load] (node_modules/@nuxtjs/sitemap/lib/cache.js:18:28)
+  at AsyncCache.get (node_modules/async-cache/ac.js:63:8)
+  at internal/util.js:286:30
+  at new Promise (<anonymous>)
+  at AsyncCache.get (internal/util.js:285:12)
+  at handler (node_modules/@nuxtjs/sitemap/lib/middleware.js:91:43)
+
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+
+ ERROR  The "url" argument must be of type string. Received type undefined
+
+  at validateString (internal/validators.js:107:11)
+  at Url.parse (url.js:155:3)
+  at Proxy.urlParse (url.js:150:13)
+  at dispatchHttpRequest (node_modules/axios/lib/adapters/http.js:67:22)
+  at new Promise (<anonymous>)
+  at httpAdapter (node_modules/axios/lib/adapters/http.js:20:10)
+  at dispatchRequest (node_modules/axios/lib/core/dispatchRequest.js:59:10)
+  at processTicksAndRejections (internal/process/task_queues.js:89:5)
+
+
+ ERROR  The "url" argument must be of type string. Received type undefined
+
+  at validateString (internal/validators.js:107:11)
+  at Url.parse (url.js:155:3)
+  at Proxy.urlParse (url.js:150:13)
+  at dispatchHttpRequest (node_modules/axios/lib/adapters/http.js:67:22)
+  at new Promise (<anonymous>)
+  at httpAdapter (node_modules/axios/lib/adapters/http.js:20:10)
+  at dispatchRequest (node_modules/axios/lib/core/dispatchRequest.js:59:10)
+
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
+ℹ Listening on: http://localhost:4001/whitenote/
