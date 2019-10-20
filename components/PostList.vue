@@ -63,8 +63,8 @@ export default {
       text-decoration: none;
       position: relative;
       overflow: hidden;
-      height: 0;
-      padding-top: 55%;
+      // height: 0;
+      // padding-top: 55%;
       border-radius: 8px;
 
       :hover {
@@ -74,11 +74,11 @@ export default {
 
     img {
       width: 100%;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      object-fit: cover;
+      // position: absolute;
+      // top: 0;
+      // bottom: 0;
+      // margin: auto;
+      // object-fit: cover;
     }
 
     ._info {
