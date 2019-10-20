@@ -70,7 +70,7 @@ export default {
     // Doc: https://github.com/nuxt-community/style-resources-module
     '@nuxtjs/style-resources',
     // Doc: https://www.npmjs.com/package/markdown-it
-    '@nuxtjs/markdownit',
+    '@nuxtjs/markdownit'
   ],
   sitemap: {
     hostname: 'https://siropaca.net/whitenote',
