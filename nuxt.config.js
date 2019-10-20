@@ -1,5 +1,6 @@
 import axios from 'axios'
 require('dotenv').config()
+import TerserPlugin from 'terser-webpack-plugin'
 
 export default {
   mode: 'universal',
@@ -139,7 +140,16 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {},
+    optimization: {
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          cache: true,
+          parallel: false
+        })
+      ]
+    }
   },
   router: {
     base: '/whitenote/'
