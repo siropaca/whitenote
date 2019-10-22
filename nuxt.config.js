@@ -1,6 +1,6 @@
 import axios from 'axios'
-require('dotenv').config()
 import TerserPlugin from 'terser-webpack-plugin'
+require('dotenv').config()
 
 export default {
   mode: 'universal',
