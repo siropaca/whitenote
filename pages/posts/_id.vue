@@ -24,13 +24,18 @@ export default {
     return true
   },
   head() {
+    const md = require('markdown-it')()
+    const desc = md
+      .render(this.post.contents)
+      .replace(/(<pre>(.|\s)*?<\/pre>|<.*?>|\{.*?\}|\r?\n)/g, '')
+      .substr(0, 200)
     return {
       title: `${this.post.title} - `,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: `${this.post.description}`
+          content: desc
         }
       ]
     }
