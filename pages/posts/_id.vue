@@ -20,7 +20,6 @@ export default {
     if (!/^\d+$/.test(params.id)) {
       throw new Error('正しいURLを入力してください')
     }
-
     return true
   },
   head() {
@@ -37,7 +36,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: desc
+          content: this.post.description || desc
         }
       ]
     }
