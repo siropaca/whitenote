@@ -3,31 +3,42 @@
     <div class="o-inner -s">
       <!-- home -->
       <div class="_contents">
-        <nuxt-link
-          :to="{ name: 'index' }"
-          class="_item"
-          @mousedown="onMousedown"
-          @mouseup="onMouseup"
-        >
+        <nuxt-link :to="{ name: 'index' }" class="_item" @touchend="onTouchend">
           <i class="fas fa-home"></i>
         </nuxt-link>
 
         <!-- darkmode -->
-        <span id="js-darkbtn" class="_item" @click="changeMode">
+        <span
+          id="js-darkbtn"
+          class="_item"
+          tabindex="0"
+          @mouseup="onMouseup"
+          @touchstart="onTouchstart"
+          @touchend="onTouchend"
+          @click="changeMode"
+        >
           <i class="fas fa-moon"></i>
         </span>
 
         <!-- outline -->
-        <span class="_item">
+        <span
+          class="_item"
+          tabindex="0"
+          @mouseup="onMouseup"
+          @touchstart="onTouchstart"
+          @touchend="onTouchend"
+        >
           <i class="fas fa-stream"></i>
         </span>
 
         <!-- pagetop -->
         <span
           class="_item"
-          @click="toPagetop"
-          @mousedown="onMousedown"
+          tabindex="0"
           @mouseup="onMouseup"
+          @touchstart="onTouchstart"
+          @touchend="onTouchend"
+          @click="toPagetop"
         >
           <i class="fas fa-level-up-alt"></i>
         </span>
@@ -50,33 +61,31 @@ export default {
   watch: {
     position(newPosi, oldPosi) {
       if (Math.abs(newPosi - oldPosi) < this.threshold) return
-
       this.showMenu = newPosi < oldPosi || false
     }
   },
   mounted() {
     smoothscroll.polyfill()
-
     window.addEventListener('scroll', this.onScroll)
   },
   destroyed() {
     window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
+    onTouchstart(e) {
+      e.currentTarget.focus()
+    },
+    onMouseup(e) {
+      e.currentTarget.blur()
+    },
+    onTouchend(e) {
+      e.currentTarget.blur()
+    },
     toPagetop() {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       })
-    },
-    onMousedown(e) {
-      e.currentTarget.classList.add('-active')
-    },
-    onMouseup(e) {
-      const target = e.currentTarget
-      setTimeout(() => {
-        target.classList.remove('-active')
-      }, 250)
     },
     onScroll() {
       this.position = window.scrollY
@@ -130,8 +139,9 @@ export default {
     padding: 0.4rem 0.8rem;
     -webkit-tap-highlight-color: transparent;
 
-    &.-active {
+    &:focus {
       color: $color-primarily;
+      outline: none;
     }
   }
 
