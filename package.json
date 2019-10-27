@@ -28,7 +28,6 @@
     "highlight.js": "^9.15.10",
     "markdown-it-attrs": "^3.0.1",
     "nuxt": "^2.0.0",
-    "scroll-hint": "^1.2.4",
     "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {

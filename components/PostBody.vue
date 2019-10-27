@@ -4,7 +4,6 @@
 
 <script>
 import '~/node_modules/highlight.js/styles/hopscotch.css'
-// const ScrollHint = require('scroll-hint')
 
 export default {
   props: {
@@ -79,8 +78,8 @@ export default {
       width: 0.4rem;
       background-color: $color-primarily;
       position: absolute;
-      top: 0.2rem;
-      bottom: 0.2rem;
+      top: 0.1rem;
+      bottom: 0.1rem;
       left: 0;
       margin: auto;
     }
