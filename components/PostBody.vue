@@ -4,6 +4,7 @@
 
 <script>
 import '~/node_modules/highlight.js/styles/hopscotch.css'
+// const ScrollHint = require('scroll-hint')
 
 export default {
   props: {
@@ -67,7 +68,7 @@ export default {
   }
 
   h2 {
-    margin: 2rem 0 0.5rem 0;
+    margin: 2.5em 0 1rem 0;
     font-size: 1.2rem;
     font-weight: bold;
     position: relative;
@@ -78,8 +79,8 @@ export default {
       width: 0.4rem;
       background-color: $color-primarily;
       position: absolute;
-      top: 0.3rem;
-      bottom: 0.3rem;
+      top: 0.2rem;
+      bottom: 0.2rem;
       left: 0;
       margin: auto;
     }
@@ -94,13 +95,14 @@ export default {
   > ul {
     margin-bottom: 1.5rem;
     padding-left: 1.6rem;
+    list-style: disc;
 
     li {
-      list-style: disc;
       margin: 0.2rem 0;
 
       ul {
         padding-left: 1.5rem;
+        list-style-type: circle;
       }
     }
   }
@@ -213,8 +215,9 @@ export default {
     letter-spacing: 0.3px;
     padding: 1rem 1.25rem;
     background-color: #282c34;
-    overflow: auto;
     position: relative;
+    word-break: keep-all;
+    overflow: auto;
 
     @include media($breakpoint-pc) {
       line-height: 1.7;
