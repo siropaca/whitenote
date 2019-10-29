@@ -70,7 +70,7 @@ export default {
       display: inline-block;
       margin-right: 0.7rem;
       margin-left: 0.7rem;
-      width: 33.3%;
+      width: 30%;
 
       &:last-child {
         margin-bottom: 1.4rem;
