@@ -1,6 +1,12 @@
 <template>
   <ul class="c-postlist">
-    <li v-for="(post, index) in posts" :key="index" class="_item">
+    <li
+      v-for="(post, index) in posts"
+      :key="index"
+      class="_item"
+      @touchstart="onTouchstart"
+      @touchend="onTouchend"
+    >
       <nuxt-link :to="{ name: 'posts-id', params: { id: post.id } }">
         <img :src="post.url" :alt="post.alt" />
         <div class="_info">
@@ -27,6 +33,14 @@ export default {
         return []
       }
     }
+  },
+  methods: {
+    onTouchstart(e) {
+      e.currentTarget.classList.add('-ontouch')
+    },
+    onTouchend(e) {
+      e.currentTarget.classList.remove('-ontouch')
+    }
   }
 }
 </script>
@@ -42,6 +56,11 @@ export default {
   ._item {
     margin-bottom: 1.4rem;
     overflow: hidden;
+    border-radius: 8px;
+    user-select: none;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    -webkit-touch-callout: none;
 
     &:last-child {
       margin-bottom: 0;
@@ -49,12 +68,17 @@ export default {
 
     @include media($breakpoint-pc) {
       display: inline-block;
-      padding: 0 0.7rem;
+      margin-right: 0.7rem;
+      margin-left: 0.7rem;
       width: 33.3%;
 
       &:last-child {
         margin-bottom: 1.4rem;
       }
+    }
+
+    &.-ontouch {
+      transform: scale(0.95, 0.95);
     }
 
     a {
@@ -63,22 +87,18 @@ export default {
       text-decoration: none;
       position: relative;
       overflow: hidden;
-      // height: 0;
-      // padding-top: 55%;
-      border-radius: 8px;
 
-      :hover {
+      &:hover {
         color: inherit;
+      }
+
+      &:visited {
+        color: $color-white;
       }
     }
 
     img {
       width: 100%;
-      // position: absolute;
-      // top: 0;
-      // bottom: 0;
-      // margin: auto;
-      // object-fit: cover;
     }
 
     ._info {
