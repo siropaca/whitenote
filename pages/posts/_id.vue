@@ -43,7 +43,7 @@ export default {
   },
   asyncData({ params, error }) {
     return axios
-      .get(`${process.env.GET_POSTS_API_URL}?id=${params.id}`)
+      .get(`${process.env.GET_POSTS_API_URL}/${params.id}`)
       .then((res) => {
         return { post: res.data }
       })
