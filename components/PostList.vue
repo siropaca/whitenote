@@ -56,7 +56,7 @@ export default {
   ._item {
     margin-bottom: 1.4rem;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 10px;
     user-select: none;
     transition-property: transform;
     transition-duration: 0.2s;
@@ -88,10 +88,7 @@ export default {
       position: relative;
       overflow: hidden;
 
-      &:hover {
-        color: inherit;
-      }
-
+      &:hover,
       &:visited {
         color: $color-white;
       }
