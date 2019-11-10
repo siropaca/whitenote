@@ -29,8 +29,10 @@ export default {
     }
   },
   asyncData({ params, error }) {
+    const GET_POSTS_API_URL = process.env.GET_POSTS_API_URL
+    const API_KEY = process.env.API_KEY
     return axios
-      .get(process.env.GET_POSTS_API_URL)
+      .get(`${GET_POSTS_API_URL}?apikey=${API_KEY}`)
       .then((res) => {
         return { posts: res.data }
       })

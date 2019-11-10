@@ -3,6 +3,7 @@
     <li
       v-for="(post, index) in posts"
       :key="index"
+      :data-id="post.status"
       class="_item"
       @touchstart="onTouchstart"
       @touchend="onTouchend"
@@ -61,6 +62,22 @@ export default {
     transition-property: transform;
     transition-duration: 0.2s;
     -webkit-touch-callout: none;
+    position: relative;
+
+    &[data-id='0']:before {
+      content: '非公開';
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      z-index: 10;
+      font-size: 0.7rem;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      font-weight: bold;
+      padding: 2px 5px;
+      letter-spacing: 1px;
+      border-radius: 4px;
+    }
 
     &:last-child {
       margin-bottom: 0;
