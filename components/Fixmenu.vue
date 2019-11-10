@@ -15,7 +15,7 @@
           @mouseup="onMouseup"
           @touchstart="onTouchstart"
           @touchend="onTouchend"
-          @click="changeMode"
+          @click="changeTheme"
         >
           <i class="fas fa-moon"></i>
         </span>
@@ -67,6 +67,8 @@ export default {
   mounted() {
     smoothscroll.polyfill()
     window.addEventListener('scroll', this.onScroll)
+
+    this.changeDarkBtn()
   },
   destroyed() {
     window.removeEventListener('scroll', this.onScroll)
@@ -90,15 +92,27 @@ export default {
     onScroll() {
       this.position = window.scrollY
     },
-    changeMode() {
+    changeTheme() {
       const body = document.body
-      const darkBtn = document.getElementById('js-darkbtn')
+      const isDark = body.classList.contains('dark-theme')
 
-      if (document.getElementById('dark')) {
-        body.removeAttribute('id', 'dark')
+      this.changeDarkBtn()
+
+      if (isDark) {
+        body.classList.add('light-theme')
+        body.classList.remove('dark-theme')
+      } else {
+        body.classList.add('dark-theme')
+        body.classList.remove('light-theme')
+      }
+    },
+    changeDarkBtn() {
+      const darkBtn = document.getElementById('js-darkbtn')
+      const isDark = document.body.classList.contains('dark-theme')
+
+      if (isDark) {
         darkBtn.classList.remove('-active')
       } else {
-        body.setAttribute('id', 'dark')
         darkBtn.classList.add('-active')
       }
     }
@@ -142,6 +156,10 @@ export default {
     &:focus {
       color: $color-primarily;
       outline: none;
+    }
+
+    &.-active {
+      color: $color-primarily;
     }
   }
 
