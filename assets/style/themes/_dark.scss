@@ -1,8 +1,39 @@
-#dark {
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $color-dark-gray;
+    color: $color-white;
+
+    .c-header .logo {
+      &.-black {
+        display: none;
+      }
+
+      &.-white {
+        display: block;
+      }
+    }
+
+    .c-postbody {
+      code {
+        background-color: $color-dark-lightgray;
+      }
+
+      table tbody tr:nth-child(odd) {
+        background-color: $color-dark-lightgray;
+      }
+    }
+
+    .c-fixmenu ._contents {
+      background-color: $color-dark-middlegray;
+    }
+  }
+}
+
+.dark-theme {
   background-color: $color-dark-gray;
   color: $color-white;
 
-  .logo {
+  .c-header .logo {
     &.-black {
       display: none;
     }
@@ -13,7 +44,7 @@
   }
 
   .c-postbody {
-    p code {
+    code {
       background-color: $color-dark-lightgray;
     }
 
@@ -24,6 +55,5 @@
 
   .c-fixmenu ._contents {
     background-color: $color-dark-middlegray;
-    opacity: 0.95;
   }
 }

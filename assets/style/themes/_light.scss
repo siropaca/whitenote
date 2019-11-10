@@ -1,0 +1,28 @@
+.light-theme {
+  background-color: $color-white;
+  color: $color-black;
+
+  .c-header .logo {
+    &.-black {
+      display: block;
+    }
+
+    &.-white {
+      display: none;
+    }
+  }
+
+  .c-postbody {
+    code {
+      background-color: $color-lightgray;
+    }
+
+    table tbody tr:nth-child(odd) {
+      background-color: $color-lightgray;
+    }
+  }
+
+  .c-fixmenu ._contents {
+    background-color: $color-white;
+  }
+}

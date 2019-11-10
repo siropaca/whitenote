@@ -1,20 +1,16 @@
 <template>
   <div>
     <PostDetail :post="post" />
-
-    <Fixmenu />
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 import PostDetail from '~/components/PostDetail.vue'
-import Fixmenu from '~/components/Fixmenu.vue'
 
 export default {
   components: {
-    PostDetail,
-    Fixmenu
+    PostDetail
   },
   validate({ params }) {
     if (!/^\d+$/.test(params.id)) {
