@@ -1,8 +1,10 @@
-import axios from 'axios'
-import TerserPlugin from 'terser-webpack-plugin'
+/* eslint-disable */
+const axios = require('axios')
+const TerserPlugin = require('terser-webpack-plugin')
 require('dotenv').config()
+/* eslint-enable */
 
-export default {
+module.exports = { // eslint-disable-line
   mode: 'universal',
   /*
    ** Headers of the page
@@ -74,12 +76,12 @@ export default {
     '@nuxtjs/markdownit'
   ],
   sitemap: {
-    hostname: 'https://siropaca.net/whitenote',
+    hostname: 'https://s10i.me/whitenote',
     path: '/sitemap.xml',
     exclude: ['/categorys'],
     routes(callback) {
       axios
-        .get('https://siropaca.net/api/v1/posts')
+        .get('https://s10i.me/api/v1/posts')
         .then((res) => {
           const routes = res.data.map((posts) => {
             return '/posts/' + posts.id
