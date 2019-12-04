@@ -19,13 +19,10 @@ export default {
     return true
   },
   head() {
-    const md = require('markdown-it')()
-    const desc = md
-      .render(this.post.contents)
-      .replace(
-        /(<pre>(.|\s)*?<\/pre>|<(.|\s)*?>|&lt;(.|\s)*?&gt;|&amp;lt;.*?&amp;gt;|\{.*?\}|\r?\n)/g,
-        ''
-      )
+    let desc = this.post.contents
+    desc = desc.replace(/(?<=.)\r?\n/g, ' ')
+    desc = desc.replace(/(```(.|\s)*?```|`|\r?\n)/g, '')
+    desc = desc.slice(0, 300)
     return {
       title: `${this.post.title} - `,
       meta: [
