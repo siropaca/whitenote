@@ -8,7 +8,10 @@
       @touchstart="onTouchstart"
       @touchend="onTouchend"
     >
-      <nuxt-link :to="{ name: 'posts-id', params: { id: post.id } }">
+      <nuxt-link
+        :to="{ name: 'posts-id', params: { id: post.id } }"
+        no-prefetch
+      >
         <img :src="post.url" :alt="post.alt" />
         <div class="_info">
           <h2 class="_title">{{ post.title }}</h2>

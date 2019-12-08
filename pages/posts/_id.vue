@@ -20,9 +20,9 @@ export default {
   },
   head() {
     let desc = this.post.contents
-    desc = desc.replace(/(?<=.)\r?\n/g, ' ')
-    desc = desc.replace(/(```(.|\s)*?```|`|\r?\n)/g, '')
-    desc = desc.slice(0, 300)
+    if (desc) {
+      desc = desc.replace(/(```(.|\s)*?```|`|\r?\n)/g, '').slice(0, 300)
+    }
     return {
       title: `${this.post.title} - `,
       meta: [
