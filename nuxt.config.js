@@ -1,10 +1,8 @@
-/* eslint-disable */
-const axios = require('axios')
-const TerserPlugin = require('terser-webpack-plugin')
+import axios from 'axios'
+import TerserPlugin from 'terser-webpack-plugin'
 require('dotenv').config()
-/* eslint-enable */
 
-module.exports = { // eslint-disable-line
+export default {
   mode: 'universal',
   /*
    ** Headers of the page
