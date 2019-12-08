@@ -68,7 +68,7 @@ export default {
     @include media($breakpoint-pc) {
       display: inline-block;
       padding: 0 0.7rem;
-      width: 33%;
+      width: 33.3%;
 
       &:last-child {
         margin-bottom: 1.4rem;
