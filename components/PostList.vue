@@ -27,7 +27,9 @@ export default {
   filters: {
     fmtDate(date) {
       const dateObj = new Date(date.replace(/-/g, '/'))
-      return `${dateObj.getFullYear()}/${dateObj.getMonth()}/${dateObj.getDate()}`
+      return `${dateObj.getFullYear()}/
+      ${dateObj.getMonth() + 1}/
+      ${dateObj.getDate()}`
     }
   },
   props: {
