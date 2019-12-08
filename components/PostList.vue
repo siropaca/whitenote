@@ -54,24 +54,32 @@ export default {
   padding: 0.5rem 1.2rem 1.5rem 1.2rem;
 
   @include media($breakpoint-pc) {
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 1.2rem 0;
   }
 
   ._item {
     margin-bottom: 1.4rem;
-    overflow: hidden;
-    border-radius: 10px;
     user-select: none;
     transition-property: transform;
     transition-duration: 0.2s;
     -webkit-touch-callout: none;
     position: relative;
 
+    @include media($breakpoint-pc) {
+      display: inline-block;
+      padding: 0 0.7rem;
+      width: 33%;
+
+      &:last-child {
+        margin-bottom: 1.4rem;
+      }
+    }
+
     &[data-id='0']:before {
       content: '非公開';
       position: absolute;
       top: 0.5rem;
-      left: 0.5rem;
+      left: 1.2rem;
       z-index: 10;
       font-size: 0.7rem;
       background-color: rgba(0, 0, 0, 0.4);
@@ -86,17 +94,6 @@ export default {
       margin-bottom: 0;
     }
 
-    @include media($breakpoint-pc) {
-      display: inline-block;
-      margin-right: 0.7rem;
-      margin-left: 0.7rem;
-      width: 30%;
-
-      &:last-child {
-        margin-bottom: 1.4rem;
-      }
-    }
-
     &.-ontouch {
       transform: scale(0.95, 0.95);
     }
@@ -107,6 +104,7 @@ export default {
       text-decoration: none;
       position: relative;
       overflow: hidden;
+      border-radius: 10px;
 
       &:hover,
       &:visited {
