@@ -64,6 +64,8 @@ export default {
   modules: [
     // Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
     '@nuxtjs/sitemap',
+    // Doc: https://www.npmjs.com/package/@nuxtjs/feed
+    '@nuxtjs/feed',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Doc: https://axios.nuxtjs.org/usage
@@ -95,6 +97,53 @@ export default {
       })
     }
   },
+  feed: [
+    {
+      path: '/feed.xml',
+      async create(feed) {
+        feed.options = {
+          title: 'WhiteNote',
+          link: 'https://s10i.me/whitenote/feed.xml',
+          description: 'This is my personal feed!',
+          language: 'ja',
+          author: {
+            name: 'Siropaca',
+          },
+          copyright: "All rights reserved 2019, Siropaca"
+        }
+
+        const posts = await axios
+          .get(`https://s10i.me/api/v1/posts`)
+          .then((res) => {
+            return res.data
+          })
+
+        posts.forEach((post) => {
+          feed.addItem({
+            title: post.title,
+            link: `https://s10i.me/api/v1/posts/${post.id}`,
+            description:
+              post.description ||
+              post.contents
+                .replace(/(```(.|\s)*?```|`|\r?\n)/g, '')
+                .slice(0, 110) + ' [&#8230;]',
+            content: post.contents,
+            date: new Date(post.post_date),
+            image: post.url
+          })
+        })
+
+        feed.addContributor({
+          name: 'Siropaca',
+          link: 'https://s10i.me/whitenote/'
+        })
+
+        feed.addCategory('blog')
+      },
+      cacheTime: 1000 * 60 * 15,
+      type: 'atom1'
+    }
+  ],
   dotenv: {
     path: './config/',
     filename: process.env.NODE_ENV === 'production' ? '.env.prod' : '.env.dev'
