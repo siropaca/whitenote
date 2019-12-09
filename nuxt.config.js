@@ -79,7 +79,7 @@ export default {
     exclude: ['/categorys'],
     routes(callback) {
       axios
-        .get('https://s10i.me/api/v1/posts')
+        .get('https://s10i.me/api/v1/sitemap')
         .then((res) => {
           const routes = res.data.map((posts) => {
             return '/posts/' + posts.id

@@ -231,7 +231,7 @@ export default {
     }
 
     &[data-tip] {
-      padding-top: 2.6rem;
+      padding-top: 2.9rem;
     }
 
     &[data-tip]::before {
