@@ -112,12 +112,14 @@ export default {
     html: true,
     highlight: (str, lang) => {
       const hljs = require('highlight.js')
-      const langAry = lang.split('.')
-      const isFilename = langAry.length === 2
-      const ext = isFilename ? langAry[1] : lang
-      const data = isFilename ? `data-tip="${lang}"` : ''
-      const type = lang && hljs.getLanguage(ext) ? ext : 'plaintext'
-      return `<pre class="hljs -full" ${data}><code>${
+      const newLang = lang.split('.').pop()
+      const langObj = hljs.getLanguage(newLang)
+      let tip = ''
+      if (lang && (langObj === undefined || lang.split('.').length > 1)) {
+        tip = `data-tip="${lang}"`
+      }
+      const type = langObj ? newLang : 'plaintext'
+      return `<pre class="hljs -full" ${tip}><code>${
         hljs.highlight(type, str, true).value
       }</code></pre>`
     },

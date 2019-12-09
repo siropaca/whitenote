@@ -238,7 +238,7 @@ export default {
       content: attr(data-tip);
       display: inline-block;
       position: absolute;
-      top: 0.9rem;
+      top: 0.8rem;
       left: 0.6rem;
       padding: 0 0.6rem;
       letter-spacing: 1px;
@@ -249,7 +249,7 @@ export default {
       background: linear-gradient(135deg, #179fcf 0%, #2c4ff7 100%);
 
       @include media($breakpoint-pc) {
-        left: 0.85rem;
+        left: 0.8rem;
       }
     }
   }
