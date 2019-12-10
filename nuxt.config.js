@@ -76,7 +76,7 @@ export default {
     '@nuxtjs/markdownit'
   ],
   sitemap: {
-    hostname: 'https://s10i.me/whitenote',
+    hostname: 'https://s10i.me/',
     path: '/sitemap.xml',
     exclude: ['/categorys'],
     routes(callback) {
@@ -103,17 +103,18 @@ export default {
       async create(feed) {
         feed.options = {
           title: 'WhiteNote',
+          id: 'https://s10i.me/whitenote/',
           link: 'https://s10i.me/whitenote/feed.xml',
           description: 'This is my personal feed!',
           language: 'ja',
           author: {
-            name: 'Siropaca',
+            name: 'Siropaca'
           },
-          copyright: "All rights reserved 2019, Siropaca"
+          copyright: 'All rights reserved 2019, Siropaca'
         }
 
         const posts = await axios
-          .get(`https://s10i.me/api/v1/posts`)
+          .get(`https://s10i.me/api/v1/posts/`)
           .then((res) => {
             return res.data
           })
@@ -121,13 +122,13 @@ export default {
         posts.forEach((post) => {
           feed.addItem({
             title: post.title,
-            link: `https://s10i.me/api/v1/posts/${post.id}`,
+            link: `https://s10i.me/whitenote/posts/${post.id}`,
             description:
               post.description ||
               post.contents
                 .replace(/(```(.|\s)*?```|`|\r?\n)/g, '')
                 .slice(0, 110) + ' [&#8230;]',
-            content: post.contents,
+            content: post.contents.replace(/(```(.|\s)*?```|`)/g, ''),
             date: new Date(post.post_date),
             image: post.url
           })
