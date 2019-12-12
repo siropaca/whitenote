@@ -18,6 +18,10 @@ export default {
     const self = this
     self.getATag().forEach((el) => {
       el.addEventListener('click', self.openNewWin)
+
+      const i = document.createElement('i')
+      i.classList.add('fas', 'fa-external-link-alt')
+      el.appendChild(i)
     })
   },
   destroyed() {
@@ -202,9 +206,15 @@ export default {
 
   code {
     background-color: $color-lightgray;
-    padding: 0.1rem 0.3rem;
+    padding: 0.05rem 0.3rem 0.1rem 0.3rem;
     border-radius: 4px;
     margin-right: 0.1rem;
+    margin-left: 0.1rem;
+  }
+
+  .fa-external-link-alt {
+    font-size: 0.85rem;
+    margin-left: 0.4rem;
   }
 
   //--- hljs ---
