@@ -78,7 +78,7 @@ export default {
   sitemap: {
     hostname: 'https://s10i.me/',
     path: '/sitemap.xml',
-    exclude: ['/categorys'],
+    exclude: ['/search'],
     routes(callback) {
       axios
         .get('https://s10i.me/api/v1/sitemap')

@@ -143,6 +143,9 @@ export default {
 
   img {
     width: 100%;
+  }
+
+  .-border {
     border: solid 1px $color-lightgray;
   }
 
@@ -158,10 +161,6 @@ export default {
     img {
       border-right: none;
       border-left: none;
-
-      @include media($breakpoint-pc) {
-        border: solid 1px $color-lightgray;
-      }
     }
   }
 

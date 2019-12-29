@@ -8,9 +8,9 @@
         <div class="o-inner -m">
           <h1 class="_title">{{ post.title }}</h1>
           <time class="_date">{{ post.post_date | fmtDate }}</time>
-          <div v-if="post.categorys" class="_categorys">
+          <div v-if="post.tags" class="_tags">
             <a
-              v-for="(category, index) in makeCatAry(post.categorys)"
+              v-for="(category, index) in makeCatAry(post.tags)"
               :key="index"
               class="_catitem"
               href="#"
@@ -56,8 +56,8 @@ export default {
     }
   },
   methods: {
-    makeCatAry(categorys) {
-      return categorys ? categorys.split(',') : []
+    makeCatAry(tags) {
+      return tags ? tags.split(',') : []
     }
   }
 }
@@ -135,7 +135,7 @@ export default {
         }
       }
 
-      ._categorys {
+      ._tags {
         margin-top: 0.5rem;
 
         @include media($breakpoint-pc) {
