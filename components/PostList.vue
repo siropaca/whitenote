@@ -52,10 +52,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .c-postlist {
   ._item {
-    margin-bottom: 1.4rem;
+    margin-bottom: 1rem;
     user-select: none;
     transition-property: transform;
     transition-duration: 0.2s;
@@ -64,8 +64,22 @@ export default {
 
     @include media($breakpoint-pc) {
       display: inline-block;
-      padding: 0 0.7rem;
-      width: 33.3%;
+      width: calc(33.3% - (2rem / 3));
+
+      &:nth-of-type(3n - 2) {
+        margin-right: calc(2rem / 4);
+        margin-left: 0;
+      }
+
+      &:nth-of-type(3n -7) {
+        margin-right: calc(2rem / 4);
+        margin-left: calc(2rem / 4);
+      }
+
+      &:nth-of-type(3n) {
+        margin-right: 0;
+        margin-left: calc(2rem / 4);
+      }
 
       &:last-child {
         margin-bottom: 1.4rem;
