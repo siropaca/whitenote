@@ -1,25 +1,28 @@
 <template>
-  <ul class="c-postlist">
-    <li
-      v-for="(post, index) in posts"
-      :key="index"
-      :data-id="post.status"
-      class="_item"
-      @touchstart="onTouchstart"
-      @touchend="onTouchend"
-    >
-      <nuxt-link
-        :to="{ name: 'posts-id', params: { id: post.id } }"
-        no-prefetch
+  <div class="c-post-list">
+    <h2 v-show="listTitle">{{ listTitle }}</h2>
+    <ul>
+      <li
+        v-for="(post, index) in posts"
+        :key="index"
+        :data-id="post.status"
+        class="_item"
+        @touchstart="onTouchstart"
+        @touchend="onTouchend"
       >
-        <img :src="post.url" :alt="post.alt" />
-        <div class="_info">
-          <h2 class="_title">{{ post.title }}</h2>
-          <time class="_date">{{ post.post_date | fmtDate }}</time>
-        </div>
-      </nuxt-link>
-    </li>
-  </ul>
+        <nuxt-link
+          :to="{ name: 'posts-id', params: { id: post.id } }"
+          no-prefetch
+        >
+          <img :src="post.url" :alt="post.alt" />
+          <div class="_info">
+            <h2 class="_title">{{ post.title }}</h2>
+            <time class="_date">{{ post.post_date | fmtDate }}</time>
+          </div>
+        </nuxt-link>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -39,6 +42,12 @@ export default {
       default: () => {
         return []
       }
+    },
+    listTitle: {
+      type: String,
+      default: () => {
+        return ''
+      }
     }
   },
   methods: {
@@ -53,7 +62,7 @@ export default {
 </script>
 
 <style lang="scss">
-.c-postlist {
+.c-post-list {
   ._item {
     margin-bottom: 1rem;
     user-select: none;

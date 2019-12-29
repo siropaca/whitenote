@@ -14,21 +14,24 @@
             @blur="onBlur"
           />
         </div>
-        <div v-show="!Object.keys(tagSearchRsult).length" class="c-tag-list">
+
+        <div v-show="!Object.keys(searchRsult).length" class="c-tag-list">
           <h2>Tags</h2>
           <ul class="_list">
             <li
               v-for="(tag, index) in tags"
               :key="index"
-              class="_itme"
               :style="{ backgroundImage: createUrl(tag.url) }"
               :data-slug="tag.slug"
-              @click="onClick"
+              class="_itme"
+              @click="onTagClick"
             >
-              <div class="_tag-name">{{ tag.value }}</div>
+              <div class="_tag-name">{{ tag.value }} ({{ tag.post_num }})</div>
             </li>
           </ul>
         </div>
+
+        <PostList :posts="searchRsult" />
       </div>
     </div>
   </div>
@@ -36,14 +39,17 @@
 
 <script>
 import axios from 'axios'
+import PostList from '~/components/PostList.vue'
 
 export default {
-  components: {},
+  components: {
+    PostList
+  },
   data() {
     return {
-      searchRsult: {},
-      tagSearchRsult: {},
+      searchRsult: [],
       keyword: '',
+      slug: '',
       isShowPlaceholder: false
     }
   },
@@ -80,9 +86,14 @@ export default {
     createUrl(url) {
       return `url(${url})`
     },
-    onClick(e) {
-      const data = e.target.dataset
-      console.log(data.slug)
+    onTagClick(e) {
+      const slug = e.target.dataset.slug
+
+      if (!slug) return
+
+      this.slug = slug
+
+      this.getTagDetail()
     },
     onFocus() {
       this.isShowPlaceholder = false
@@ -92,6 +103,23 @@ export default {
     },
     cheackPlaceholder() {
       this.isShowPlaceholder = this.keyword === ''
+    },
+    getTagDetail() {
+      axios
+        .get(`https://s10i.me/api/v1/search`, {
+          headers: { 'x-api-key': process.env.API_KEY },
+          params: {
+            tag: this.slug
+          }
+        })
+        .then((res) => {
+          if (!res.data.length) return
+          this.searchRsult = res.data
+          history.replaceState('', '', `search?tag=${this.slug}`)
+        })
+        .catch((e) => {
+          // const res = e.response
+        })
     }
   }
 }
@@ -105,7 +133,7 @@ export default {
   input[type='text'] {
     width: 100%;
     border-radius: $border-radius;
-    line-height: 2.2rem;
+    line-height: 2.3rem;
     padding: 0 0.7rem;
     font-size: 1rem;
   }
@@ -134,22 +162,27 @@ export default {
       width: calc(50% - 0.5rem);
       margin-bottom: 1rem;
       border-radius: $border-radius;
-      padding: 0.5rem;
+      padding: 0.4rem 0.5rem;
       color: $color-black;
       font-weight: bold;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
-      min-height: 5rem;
+      min-height: 6rem;
       cursor: pointer;
 
       @include media($breakpoint-mobile) {
         min-height: 8rem;
+        padding: 0.5rem 0.8rem;
+
+        ._tag-name {
+          font-size: 1.2rem;
+        }
       }
 
       @include media($breakpoint-pc) {
-        min-height: 11rem;
-        padding: 0.5rem 0.7rem;
+        min-height: 10rem;
+        padding: 0.5rem 0.9rem;
 
         ._tag-name {
           font-size: 1.4rem;
