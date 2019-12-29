@@ -35,9 +35,10 @@ export default {
     }
   },
   asyncData({ params, error }) {
-    const API_KEY = process.env.API_KEY
     return axios
-      .get(`https://s10i.me/api/v1/posts/${params.id}?apikey=${API_KEY}`)
+      .get(`https://s10i.me/api/v1/posts/${params.id}`, {
+        headers: { 'x-api-key': process.env.API_KEY }
+      })
       .then((res) => {
         return { post: res.data }
       })
