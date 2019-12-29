@@ -14,7 +14,7 @@
             @blur="onBlur"
           />
         </div>
-        <div class="c-tag-list" v-show="!Object.keys(tagSearchRsult).length">
+        <div v-show="!Object.keys(tagSearchRsult).length" class="c-tag-list">
           <h2>Tags</h2>
           <ul class="_list">
             <li
@@ -69,7 +69,8 @@ export default {
         return { tags: res.data }
       })
       .catch((e) => {
-        error({ statusCode: 404, message: 'ページが見つかりません' })
+        const res = e.response
+        error({ statusCode: res.status, message: res.statusText })
       })
   },
   mounted() {

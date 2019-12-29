@@ -43,7 +43,8 @@ export default {
         return { post: res.data }
       })
       .catch((e) => {
-        error({ statusCode: 404, message: 'ページが見つかりません' })
+        const res = e.response
+        error({ statusCode: res.status, message: res.statusText })
       })
   }
 }
