@@ -120,7 +120,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .c-fixmenu {
   position: fixed;
   right: 1rem;

@@ -1,10 +1,10 @@
 <template>
-  <main class="c-postdetail">
-    <div class="_postheader">
+  <main class="c-post-detail">
+    <div class="_post-header">
       <img :src="post.url" :alt="post.alt" />
       <div class="_filter"></div>
 
-      <div class="_postinfo">
+      <div class="_post-info">
         <div class="o-inner -m">
           <h1 class="_title">{{ post.title }}</h1>
           <time class="_date">{{ post.post_date | fmtDate }}</time>
@@ -12,7 +12,7 @@
             <a
               v-for="(category, index) in makeCatAry(post.tags)"
               :key="index"
-              class="_catitem"
+              class="_category-item"
               href="#"
             >
               <i class="fas fa-tag"></i>
@@ -63,9 +63,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.c-postdetail {
-  ._postheader {
+<style lang="scss">
+.c-post-detail {
+  ._post-header {
     padding-top: 55%;
     height: 0;
     position: relative;
@@ -93,7 +93,7 @@ export default {
       background-color: rgba(0, 0, 0, 0.2);
     }
 
-    ._postinfo {
+    ._post-info {
       color: $color-white;
       position: absolute;
       left: 0;
@@ -143,7 +143,7 @@ export default {
         }
       }
 
-      ._catitem {
+      ._category-item {
         color: $color-white;
         text-decoration: none;
         font-size: 0.65rem;

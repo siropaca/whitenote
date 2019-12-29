@@ -105,16 +105,17 @@ export default {
   input[type='text'] {
     width: 100%;
     border-radius: $border-radius;
-    line-height: 2rem;
-    padding: 0 0.5rem;
+    line-height: 2.2rem;
+    padding: 0 0.7rem;
+    font-size: 1rem;
   }
 
   ._placeholder {
     position: absolute;
     z-index: 10;
     color: $color-gray;
-    line-height: 2.1rem;
-    margin-left: 0.5rem;
+    line-height: 2.3rem;
+    margin-left: 0.7rem;
 
     .fa-search {
       display: inline-block;
@@ -139,11 +140,15 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
-      min-height: 7rem;
+      min-height: 5rem;
       cursor: pointer;
 
+      @include media($breakpoint-mobile) {
+        min-height: 8rem;
+      }
+
       @include media($breakpoint-pc) {
-        min-height: 10rem;
+        min-height: 11rem;
         padding: 0.5rem 0.7rem;
 
         ._tag-name {

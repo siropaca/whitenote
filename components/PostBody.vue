@@ -1,5 +1,5 @@
 <template>
-  <div class="c-postbody js-postbody" v-html="$md.render(contents)"></div>
+  <div class="c-post-body js-post-body" v-html="$md.render(contents)"></div>
 </template>
 
 <script>
@@ -33,7 +33,7 @@ export default {
   methods: {
     getATag() {
       return document
-        .getElementsByClassName('js-postbody')[0]
+        .getElementsByClassName('js-post-body')[0]
         .querySelectorAll('a')
     },
     openNewWin(e) {
@@ -45,8 +45,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.c-postbody {
+<style lang="scss">
+.c-post-body {
   $side-padding: 1rem;
 
   padding: 2rem $side-padding;
