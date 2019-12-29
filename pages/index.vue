@@ -1,9 +1,11 @@
 <template>
   <div class="o-container">
     <div class="o-inner -m">
-      <main>
-        <PostList :posts="posts" />
-      </main>
+      <div class="o-padding">
+        <main>
+          <PostList :posts="posts" />
+        </main>
+      </div>
     </div>
   </div>
 </template>
@@ -43,4 +45,4 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped></style>

@@ -45,7 +45,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .c-postbody {
   $side-padding: 1rem;
 
@@ -206,7 +206,7 @@ export default {
   code {
     background-color: $color-lightgray;
     padding: 0.05rem 0.3rem 0.1rem 0.3rem;
-    border-radius: 4px;
+    border-radius: $border-radius;
     margin-right: 0.1rem;
     margin-left: 0.1rem;
   }

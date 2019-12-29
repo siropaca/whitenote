@@ -18,7 +18,7 @@
   </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .c-footer {
   padding: 1rem 0;
   background-color: $color-footer-bg;

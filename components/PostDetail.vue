@@ -63,7 +63,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .c-postdetail {
   ._postheader {
     padding-top: 55%;
@@ -150,7 +150,7 @@ export default {
         padding: 0.15rem 0.5rem;
         margin-right: 0.6rem;
         border: solid 1px $color-white;
-        border-radius: 5px;
+        border-radius: $border-radius;
         letter-spacing: 1px;
         opacity: 0.85;
         margin-bottom: 0.3rem;

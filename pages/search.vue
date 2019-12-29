@@ -1,15 +1,48 @@
 <template>
-  <div>
-    <div>かてごりーページ</div>
+  <div class="o-container">
+    <div class="o-inner -m">
+      <div class="o-padding">
+        <h2>Search</h2>
+        <div class="c-search-box">
+          <div v-show="!keyword" class="_placeholder">
+            <i class="fas fa-search"></i>検索
+          </div>
+          <input v-model="keyword" type="text" />
+        </div>
+        <div class="c-tag-list">
+          <h2>Tags</h2>
+          <ul class="_list">
+            <li
+              v-for="(tag, index) in tags"
+              :key="index"
+              class="_itme"
+              :style="{ backgroundImage: createUrl(tag.url) }"
+              :data-slug="tag.slug"
+              @click="onClick"
+            >
+              {{ tag.value }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   components: {},
+  data() {
+    return {
+      keyword: '',
+      searchRsult: {}
+    }
+  },
   head() {
     return {
-      title: `カテゴリー - `,
+      title: `Search - `,
       meta: [
         {
           hid: 'description',
@@ -18,6 +51,84 @@ export default {
         }
       ]
     }
+  },
+  asyncData({ query, params, error }) {
+    return axios
+      .get(`https://s10i.me/api/v1/tags`, {
+        headers: { 'x-api-key': process.env.API_KEY },
+        params: query
+      })
+      .then((res) => {
+        return { tags: res.data }
+      })
+      .catch((e) => {
+        error({ statusCode: 404, message: 'ページが見つかりません' })
+      })
+  },
+  methods: {
+    createUrl(url) {
+      return `url(${url})`
+    },
+    onClick(e) {
+      const data = e.target.dataset
+      console.log(data.slug)
+    }
   }
 }
 </script>
+
+<style lang="scss">
+.c-search-box {
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  input[type='text'] {
+    width: 100%;
+    border-radius: $border-radius;
+    line-height: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  ._placeholder {
+    position: absolute;
+    z-index: 10;
+    color: $color-gray;
+    line-height: 2.1rem;
+    margin-left: 0.5rem;
+  }
+}
+
+.c-tag-list {
+  ._list {
+    display: flex;
+    flex-wrap: wrap;
+
+    ._itme {
+      flex-shrink: 0;
+      width: calc(50% - 0.5rem);
+      margin-bottom: 1rem;
+      border-radius: $border-radius;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: $color-black;
+      font-weight: bold;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      min-height: 7rem;
+
+      @include media($breakpoint-pc) {
+        min-height: 10rem;
+      }
+
+      &:nth-child(odd) {
+        margin-right: 0.5rem;
+      }
+
+      &:nth-child(even) {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+</style>

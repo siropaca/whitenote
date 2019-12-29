@@ -52,14 +52,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .c-postlist {
-  padding: 0.5rem 1.2rem 1.5rem 1.2rem;
-
-  @include media($breakpoint-pc) {
-    padding: 0.5rem 0 1.2rem 0;
-  }
-
   ._item {
     margin-bottom: 1.4rem;
     user-select: none;
@@ -90,7 +84,7 @@ export default {
       font-weight: bold;
       padding: 2px 5px;
       letter-spacing: 1px;
-      border-radius: 4px;
+      border-radius: 5px;
     }
 
     &:last-child {
