@@ -2,14 +2,19 @@
   <div class="o-container">
     <div class="o-inner -m">
       <div class="o-padding">
-        <h2>Search</h2>
         <div class="c-search-box">
-          <div v-show="!keyword" class="_placeholder">
-            <i class="fas fa-search"></i>検索
+          <h2>Search</h2>
+          <div v-show="isShowPlaceholder" class="_placeholder">
+            <i class="fas fa-search"></i>検索キーワード
           </div>
-          <input v-model="keyword" type="text" />
+          <input
+            v-model="keyword"
+            type="text"
+            @focus="onFocus"
+            @blur="onBlur"
+          />
         </div>
-        <div class="c-tag-list">
+        <div class="c-tag-list" v-show="!Object.keys(tagSearchRsult).length">
           <h2>Tags</h2>
           <ul class="_list">
             <li
@@ -20,7 +25,7 @@
               :data-slug="tag.slug"
               @click="onClick"
             >
-              {{ tag.value }}
+              <div class="_tag-name">{{ tag.value }}</div>
             </li>
           </ul>
         </div>
@@ -36,8 +41,10 @@ export default {
   components: {},
   data() {
     return {
+      searchRsult: {},
+      tagSearchRsult: {},
       keyword: '',
-      searchRsult: {}
+      isShowPlaceholder: false
     }
   },
   head() {
@@ -65,6 +72,9 @@ export default {
         error({ statusCode: 404, message: 'ページが見つかりません' })
       })
   },
+  mounted() {
+    this.cheackPlaceholder()
+  },
   methods: {
     createUrl(url) {
       return `url(${url})`
@@ -72,6 +82,15 @@ export default {
     onClick(e) {
       const data = e.target.dataset
       console.log(data.slug)
+    },
+    onFocus() {
+      this.isShowPlaceholder = false
+    },
+    onBlur() {
+      this.cheackPlaceholder()
+    },
+    cheackPlaceholder() {
+      this.isShowPlaceholder = this.keyword === ''
     }
   }
 }
@@ -95,6 +114,11 @@ export default {
     color: $color-gray;
     line-height: 2.1rem;
     margin-left: 0.5rem;
+
+    .fa-search {
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
   }
 }
 
@@ -119,6 +143,11 @@ export default {
 
       @include media($breakpoint-pc) {
         min-height: 10rem;
+        padding: 0.5rem 0.7rem;
+
+        ._tag-name {
+          font-size: 1.4rem;
+        }
       }
 
       &:nth-child(odd) {
