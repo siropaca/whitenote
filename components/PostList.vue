@@ -62,6 +62,19 @@ export default {
     -webkit-touch-callout: none;
     position: relative;
 
+    @include media($breakpoint-mobile) {
+      display: inline-block;
+      width: calc(50% - 0.5rem);
+
+      &:nth-child(odd) {
+        margin-right: 0.5rem;
+      }
+
+      &:nth-child(even) {
+        margin-left: 0.5rem;
+      }
+    }
+
     @include media($breakpoint-pc) {
       display: inline-block;
       width: calc(33.3% - (2rem / 3));

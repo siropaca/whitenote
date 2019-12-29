@@ -132,7 +132,6 @@ export default {
       width: calc(50% - 0.5rem);
       margin-bottom: 1rem;
       border-radius: $border-radius;
-      cursor: pointer;
       padding: 0.5rem;
       color: $color-black;
       font-weight: bold;
@@ -140,6 +139,7 @@ export default {
       background-size: cover;
       background-position: center center;
       min-height: 7rem;
+      cursor: pointer;
 
       @include media($breakpoint-pc) {
         min-height: 10rem;

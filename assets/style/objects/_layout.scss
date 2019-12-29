@@ -20,7 +20,7 @@
 }
 
 .o-padding {
-  padding: 0 1rem 1.5rem;
+  padding: 0 1rem 1.5rem 1rem;
 
   @include media($breakpoint-pc) {
     padding: 0 1rem 1.2rem 1rem;
