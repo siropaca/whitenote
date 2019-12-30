@@ -12,19 +12,37 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-widthf, initial-scale=1' },
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       {
         name: 'format-detection',
         content: 'telephone=no, email=no, address=no'
       },
       {
+        name: 'google-site-verification',
+        content: 'MVMDNQVr5eFOn_a11sAFxAqVEyz2jjfKYa98b2CYwgM'
+      },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'WhiteNote' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://s10i.me/whitenote/'
+      },
+      { hid: 'og:title', property: 'og:title', content: 'WhiteNote' },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://s10i.me/whitenote/ogp.png'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: ''
+      },
+      {
         hid: 'description',
         name: 'description',
         content: ''
-      },
-      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
-      {
-        name: 'google-site-verification',
-        content: 'MVMDNQVr5eFOn_a11sAFxAqVEyz2jjfKYa98b2CYwgM'
       }
     ],
     link: [
