@@ -8,6 +8,9 @@ export default {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      prefix: 'og: http://ogp.me/ns#'
+    },
     titleTemplate: '%s - WhiteNote',
     meta: [
       { charset: 'utf-8' },
