@@ -55,7 +55,7 @@ export default {
   },
   head() {
     return {
-      title: `Search - `,
+      title: 'Search',
       meta: [
         {
           hid: 'description',

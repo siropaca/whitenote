@@ -8,7 +8,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%sWhiteNote',
+    titleTemplate: '%s - WhiteNote',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-widthf, initial-scale=1' },

@@ -24,7 +24,7 @@ export default {
       desc = desc.replace(/(```(.|\s)*?```|`|\r?\n)/g, '').slice(0, 200)
     }
     return {
-      title: `${this.post.title} - `,
+      title: this.post.title,
       meta: [
         { hid: 'og:type', property: 'og:type', content: 'artice' },
         {

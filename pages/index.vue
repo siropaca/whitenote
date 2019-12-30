@@ -20,7 +20,8 @@ export default {
   },
   head() {
     return {
-      title: '',
+      titleTemplate: null,
+      title: 'WhiteNote',
       meta: [
         {
           hid: 'description',
