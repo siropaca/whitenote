@@ -171,7 +171,7 @@ export default {
       min-height: 6rem;
       cursor: pointer;
 
-      @include media($breakpoint-mobile) {
+      @include media($breakpoint-tablet) {
         min-height: 8rem;
         padding: 0.5rem 0.8rem;
 

@@ -71,7 +71,7 @@ export default {
     -webkit-touch-callout: none;
     position: relative;
 
-    @include media($breakpoint-mobile) {
+    @include media($breakpoint-tablet) {
       display: inline-block;
       width: calc(50% - 0.5rem);
 
