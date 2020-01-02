@@ -68,8 +68,7 @@ export default {
   asyncData({ query, params, error }) {
     return axios
       .get(`https://s10i.me/api/v1/tags`, {
-        headers: { 'x-api-key': process.env.API_KEY },
-        params: query
+        headers: { 'x-api-key': process.env.API_KEY }
       })
       .then((res) => {
         return { tags: res.data }

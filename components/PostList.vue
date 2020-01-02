@@ -165,6 +165,7 @@ export default {
       ._title {
         font-weight: bold;
         font-size: 1.1rem;
+        margin-bottom: 0.3rem;
 
         @include media($breakpoint-pc) {
           font-size: 1rem;

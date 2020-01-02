@@ -141,6 +141,20 @@ export default {
     }
   }
 
+  a {
+    &:hover {
+      .fa-external-link-alt {
+        display: inline-block;
+      }
+    }
+
+    .fa-external-link-alt {
+      display: none;
+      font-size: 0.85rem;
+      margin-left: 0.4rem;
+    }
+  }
+
   img {
     width: 100%;
     margin-top: 0.5rem;
@@ -169,6 +183,7 @@ export default {
   blockquote {
     border-left: solid 0.3rem $color-middlegray;
     padding: 0.3rem 1rem;
+    margin-bottom: 1.5rem;
     opacity: 0.6;
   }
 
@@ -211,11 +226,6 @@ export default {
     border-radius: $border-radius;
     margin-right: 0.1rem;
     margin-left: 0.1rem;
-  }
-
-  .fa-external-link-alt {
-    font-size: 0.85rem;
-    margin-left: 0.4rem;
   }
 
   //--- hljs ---
