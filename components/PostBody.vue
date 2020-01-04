@@ -249,6 +249,7 @@ export default {
       padding: 0;
       border-radius: 0;
       margin-right: 0;
+      margin-left: 0;
     }
 
     &[data-tip] {
