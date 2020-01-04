@@ -138,6 +138,8 @@ export default {
       position: relative;
       overflow: hidden;
       border-radius: 10px;
+      height: 0;
+      padding-top: 63%;
 
       &:hover,
       &:visited {
@@ -146,7 +148,12 @@ export default {
     }
 
     img {
-      width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
     }
 
     ._info {

@@ -2,13 +2,17 @@
   background-color: $color-white;
   color: $color-black;
 
-  .c-header .logo {
-    &.-black {
-      display: block;
-    }
+  .c-header {
+    background-color: $color-white;
 
-    &.-white {
-      display: none;
+    .logo {
+      &.-black {
+        display: block;
+      }
+
+      &.-white {
+        display: none;
+      }
     }
   }
 

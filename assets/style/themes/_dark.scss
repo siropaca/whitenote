@@ -3,13 +3,17 @@
     background-color: $color-dark-gray;
     color: $color-white;
 
-    .c-header .logo {
-      &.-black {
-        display: none;
-      }
+    .c-header {
+      background-color: $color-dark-gray;
 
-      &.-white {
-        display: block;
+      .logo {
+        &.-black {
+          display: none;
+        }
+
+        &.-white {
+          display: block;
+        }
       }
     }
 
@@ -33,13 +37,17 @@
   background-color: $color-dark-gray;
   color: $color-white;
 
-  .c-header .logo {
-    &.-black {
-      display: none;
-    }
+  .c-header {
+    background-color: $color-dark-gray;
 
-    &.-white {
-      display: block;
+    .logo {
+      &.-black {
+        display: none;
+      }
+
+      &.-white {
+        display: block;
+      }
     }
   }
 

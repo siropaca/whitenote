@@ -25,6 +25,19 @@
   align-items: center;
   padding: 0 0.9rem;
   height: $header-height;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  @include media($breakpoint-tablet) {
+    position: sticky;
+  }
+
+  @include media($breakpoint-pc) {
+    position: sticky;
+  }
 
   @include media($container-width-m) {
     padding: 0;
