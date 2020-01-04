@@ -48,6 +48,13 @@ export default {
         content: ''
       }
     ],
+    script: [
+      {
+        'data-ad-client': 'ca-pub-2267300810538312',
+        async: true,
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+      }
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/whitenote/favicon.ico' },
       { rel: 'apple-touch-icon', href: '/whitenote/apple-touch-icon.png' },
