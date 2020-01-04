@@ -71,6 +71,10 @@ export default {
     position: relative;
     overflow: hidden;
 
+    @include media($breakpoint-tablet) {
+      padding-top: 40%;
+    }
+
     @include media($breakpoint-pc) {
       padding-top: 30%;
     }
