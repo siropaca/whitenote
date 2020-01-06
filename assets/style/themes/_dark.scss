@@ -5,15 +5,11 @@
 
     .c-header {
       background-color: $color-dark-gray;
+    }
 
-      .logo {
-        &.-black {
-          display: none;
-        }
-
-        &.-white {
-          display: block;
-        }
+    .c-site-logo {
+      ._path {
+        fill: $color-white;
       }
     }
 
@@ -39,15 +35,11 @@
 
   .c-header {
     background-color: $color-dark-gray;
+  }
 
-    .logo {
-      &.-black {
-        display: none;
-      }
-
-      &.-white {
-        display: block;
-      }
+  .c-site-logo {
+    ._path {
+      fill: $color-white;
     }
   }
 

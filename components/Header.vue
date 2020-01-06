@@ -3,21 +3,22 @@
     <div class="o-inner -m">
       <div class="header-contents">
         <nuxt-link :to="{ name: 'index' }">
-          <img
-            src="~/assets/images/b-logo.svg"
-            alt="WhiteNote"
-            class="logo -black"
-          />
-          <img
-            src="~/assets/images/w-logo.svg"
-            alt="WhiteNote"
-            class="logo -white"
-          />
+          <SiteLogo />
         </nuxt-link>
       </div>
     </div>
   </header>
 </template>
+
+<script>
+import SiteLogo from '~/components/SiteLogo.vue'
+
+export default {
+  components: {
+    SiteLogo
+  }
+}
+</script>
 
 <style lang="scss">
 .c-header {
@@ -51,14 +52,6 @@
     .fas {
       font-size: 1.5rem;
       margin: 0 0.4rem;
-    }
-  }
-
-  .logo {
-    height: 1.3rem;
-
-    &.-white {
-      display: none;
     }
   }
 }

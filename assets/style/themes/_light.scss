@@ -4,15 +4,11 @@
 
   .c-header {
     background-color: $color-white;
+  }
 
-    .logo {
-      &.-black {
-        display: block;
-      }
-
-      &.-white {
-        display: none;
-      }
+  .c-site-logo {
+    ._path {
+      fill: $color-black;
     }
   }
 
