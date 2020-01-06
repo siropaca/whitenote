@@ -3,7 +3,7 @@
     <div class="o-inner -m">
       <div class="o-padding">
         <main>
-          <PostList :posts="posts" />
+          <PostList :posts="posts" :list-title="recentPosts" />
         </main>
       </div>
     </div>
@@ -29,6 +29,11 @@ export default {
           content: ''
         }
       ]
+    }
+  },
+  data() {
+    return {
+      recentPosts: 'Recent Posts'
     }
   },
   asyncData({ params, error }) {

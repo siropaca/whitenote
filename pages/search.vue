@@ -21,12 +21,17 @@
             <li
               v-for="(tag, index) in tags"
               :key="index"
-              :style="{ backgroundImage: createUrl(tag.url) }"
+              :style="{
+                backgroundImage: createUrl(tag.url),
+                backgroundColor: tag.bg_color,
+                color: tag.font_color
+              }"
               :data-slug="tag.slug"
               class="_itme"
               @click="onTagClick"
             >
               <div class="_tag-name">{{ tag.value }} ({{ tag.post_num }})</div>
+              <img :src="tag.logo_url" :alt="tag.logo_alt" class="_logo" />
             </li>
           </ul>
         </div>
@@ -157,6 +162,8 @@ export default {
     flex-wrap: wrap;
 
     ._itme {
+      position: relative;
+      overflow: hidden;
       flex-shrink: 0;
       width: calc(50% - 0.5rem);
       margin-bottom: 1rem;
@@ -165,26 +172,41 @@ export default {
       color: $color-black;
       font-weight: bold;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 100% auto;
       background-position: center center;
-      min-height: 6rem;
       cursor: pointer;
+      height: 6.2rem;
+
+      ._logo {
+        width: 7rem;
+        position: absolute;
+        right: -1.5rem;
+        bottom: -1.5rem;
+      }
 
       @include media($breakpoint-tablet) {
-        min-height: 8rem;
+        height: 8rem;
         padding: 0.5rem 0.8rem;
 
         ._tag-name {
           font-size: 1.2rem;
         }
+
+        ._logo {
+          width: 8.8rem;
+        }
       }
 
       @include media($breakpoint-pc) {
-        min-height: 10rem;
+        height: 11rem;
         padding: 0.5rem 0.9rem;
 
         ._tag-name {
-          font-size: 1.4rem;
+          font-size: 1.5rem;
+        }
+
+        ._logo {
+          width: 11.5rem;
         }
       }
 
