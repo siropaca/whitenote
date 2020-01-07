@@ -1,10 +1,14 @@
 <template>
   <header class="c-header">
     <div class="o-inner -m">
-      <div class="header-contents">
+      <div class="_contents">
         <nuxt-link :to="{ name: 'index' }">
           <SiteLogo />
         </nuxt-link>
+
+        <!-- <nuxt-link :to="{ name: 'search' }">
+          <i class="fas fa-search"></i>
+        </nuxt-link> -->
       </div>
     </div>
   </header>
@@ -31,6 +35,7 @@ export default {
   left: 0;
   right: 0;
   z-index: 100;
+  backdrop-filter: blur(3px);
 
   @include media($breakpoint-tablet) {
     position: sticky;
@@ -44,14 +49,15 @@ export default {
     padding: 0;
   }
 
-  .header-contents {
+  ._contents {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     .fas {
-      font-size: 1.5rem;
-      margin: 0 0.4rem;
+      font-size: 1.4rem;
+      padding: 0 0.5rem;
+      vertical-align: middle;
     }
   }
 }

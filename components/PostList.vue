@@ -140,6 +140,7 @@ export default {
       border-radius: 10px;
       height: 0;
       padding-top: 63%;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.18);
 
       &:hover,
       &:visited {

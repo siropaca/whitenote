@@ -4,7 +4,13 @@
     color: $color-white;
 
     .c-header {
-      background-color: $color-dark-gray;
+      background-color: rgba($color: $color-dark-gray, $alpha: 0.8);
+
+      ._contents {
+        a {
+          color: $color-white;
+        }
+      }
     }
 
     .c-site-logo {
@@ -34,7 +40,13 @@
   color: $color-white;
 
   .c-header {
-    background-color: $color-dark-gray;
+    background-color: rgba($color: $color-dark-gray, $alpha: 0.8);
+
+    ._contents {
+      a {
+        color: $color-white;
+      }
+    }
   }
 
   .c-site-logo {

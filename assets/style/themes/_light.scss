@@ -3,7 +3,13 @@
   color: $color-black;
 
   .c-header {
-    background-color: $color-white;
+    background-color: rgba($color: $color-white, $alpha: 0.8);
+
+    ._contents {
+      a {
+        color: $color-black;
+      }
+    }
   }
 
   .c-site-logo {
