@@ -2,41 +2,37 @@
   <div class="o-container">
     <div class="o-inner -m">
       <div class="o-padding">
-        <div class="c-search-box">
+        <!-- <div class="c-search-box">
           <h2>Search</h2>
-          <div v-show="isShowPlaceholder" class="_placeholder">
+          <div v-show="!keyword" class="_placeholder">
             <i class="fas fa-search"></i>検索キーワード
           </div>
-          <input
-            v-model="keyword"
-            type="text"
-            @focus="onFocus"
-            @blur="onBlur"
-          />
-        </div>
+          <input v-model="keyword" type="text" />
+        </div> -->
 
         <div v-show="!Object.keys(searchRsult).length" class="c-tag-list">
           <h2>Tags</h2>
           <ul class="_list">
             <li
-              v-for="(tag, index) in tags"
+              v-for="(tag, index) in tagList"
               :key="index"
               :style="{
-                backgroundImage: createUrl(tag.url),
                 backgroundColor: tag.bg_color,
                 color: tag.font_color
               }"
-              :data-slug="tag.slug"
               class="_itme"
-              @click="onTagClick"
             >
-              <div class="_tag-name">{{ tag.value }} ({{ tag.post_num }})</div>
-              <img :src="tag.logo_url" :alt="tag.logo_alt" class="_logo" />
+              <nuxt-link :to="createTagUrl(tag.slug)">
+                <div class="_tag-name">
+                  {{ tag.value }} ({{ tag.post_num }})
+                </div>
+                <img :src="tag.logo_url" :alt="tag.logo_alt" class="_logo" />
+              </nuxt-link>
             </li>
           </ul>
         </div>
 
-        <PostList :posts="searchRsult" />
+        <PostList :posts="searchRsult" :list-title="searchRsultTitle" />
       </div>
     </div>
   </div>
@@ -52,10 +48,10 @@ export default {
   },
   data() {
     return {
-      searchRsult: [],
       keyword: '',
-      slug: '',
-      isShowPlaceholder: false
+      tagList: [],
+      searchRsult: [],
+      searchRsultTitle: ''
     }
   },
   head() {
@@ -72,41 +68,37 @@ export default {
   },
   asyncData({ query, params, error }) {
     return axios
-      .get(`https://s10i.me/api/v1/tags`, {
+      .get('https://s10i.me/api/v1/tags', {
         headers: { 'x-api-key': process.env.API_KEY }
       })
       .then((res) => {
-        return { tags: res.data }
+        return { tagList: res.data }
       })
       .catch((e) => {
         const res = e.response
         error({ statusCode: res.status, message: res.statusText })
       })
   },
-  mounted() {
-    this.cheackPlaceholder()
+  beforeRouteUpdate(to, from, next) {
+    next()
+    this.checkRefresh()
+  },
+  created() {
+    this.checkRefresh()
   },
   methods: {
-    createUrl(url) {
-      return `url(${url})`
+    createTagUrl(slug) {
+      return `/search?tag=${slug}`
     },
-    onTagClick(e) {
-      const slug = e.target.dataset.slug
+    checkRefresh() {
+      const tag = this.$route.query.tag
+      if (tag) {
+        this.slug = tag
+        this.getTagDetail()
+        return
+      }
 
-      if (!slug) return
-
-      this.slug = slug
-
-      this.getTagDetail()
-    },
-    onFocus() {
-      this.isShowPlaceholder = false
-    },
-    onBlur() {
-      this.cheackPlaceholder()
-    },
-    cheackPlaceholder() {
-      this.isShowPlaceholder = this.keyword === ''
+      this.searchRsult = []
     },
     getTagDetail() {
       axios
@@ -119,7 +111,13 @@ export default {
         .then((res) => {
           if (!res.data.length) return
           this.searchRsult = res.data
-          history.replaceState('', '', `search?tag=${this.slug}`)
+
+          const self = this
+          const result = this.tagList.filter(
+            (item) => item.slug === self.slug
+          )[0]
+
+          this.searchRsultTitle = result.value
         })
         .catch((e) => {
           // const res = e.response
@@ -161,6 +159,13 @@ export default {
     display: flex;
     flex-wrap: wrap;
 
+    a,
+    a:visited {
+      color: inherit;
+      display: block;
+      height: 100%;
+    }
+
     ._itme {
       position: relative;
       overflow: hidden;
@@ -168,25 +173,35 @@ export default {
       width: calc(50% - 0.5rem);
       margin-bottom: 1rem;
       border-radius: $border-radius;
-      padding: 0.4rem 0.5rem;
       color: $color-black;
       font-weight: bold;
       background-repeat: no-repeat;
       background-size: 100% auto;
       background-position: center center;
-      cursor: pointer;
       height: 6.2rem;
+
+      a {
+        padding: 0.4rem 0.5rem;
+      }
+
+      ._tag-name {
+        z-index: 10;
+      }
 
       ._logo {
         width: 7rem;
         position: absolute;
         right: -1.5rem;
         bottom: -1.5rem;
+        z-index: 0;
       }
 
       @include media($breakpoint-tablet) {
         height: 8rem;
-        padding: 0.5rem 0.8rem;
+
+        a {
+          padding: 0.5rem 0.8rem;
+        }
 
         ._tag-name {
           font-size: 1.2rem;
@@ -199,7 +214,10 @@ export default {
 
       @include media($breakpoint-pc) {
         height: 11rem;
-        padding: 0.5rem 0.9rem;
+
+        a {
+          padding: 0.5rem 0.9rem;
+        }
 
         ._tag-name {
           font-size: 1.5rem;

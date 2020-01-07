@@ -6,9 +6,9 @@
           <SiteLogo />
         </nuxt-link>
 
-        <!-- <nuxt-link :to="{ name: 'search' }">
+        <nuxt-link :to="{ name: 'search' }">
           <i class="fas fa-search"></i>
-        </nuxt-link> -->
+        </nuxt-link>
       </div>
     </div>
   </header>
@@ -35,7 +35,7 @@ export default {
   left: 0;
   right: 0;
   z-index: 100;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
 
   @include media($breakpoint-tablet) {
     position: sticky;

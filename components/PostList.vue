@@ -112,7 +112,7 @@ export default {
       content: '非公開';
       position: absolute;
       top: 0.5rem;
-      left: 1.2rem;
+      left: 0.5rem;
       z-index: 10;
       font-size: 0.7rem;
       background-color: rgba(0, 0, 0, 0.4);
