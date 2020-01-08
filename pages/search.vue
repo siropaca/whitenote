@@ -3,7 +3,7 @@
     <div class="o-inner -m">
       <div class="o-padding">
         <!-- <div class="c-search-box">
-          <h2>Search</h2>
+          <h2 class="c-list-title">Search</h2>
           <div v-show="!keyword" class="_placeholder">
             <i class="fas fa-search"></i>検索キーワード
           </div>
@@ -11,7 +11,7 @@
         </div> -->
 
         <div v-show="!Object.keys(searchRsult).length" class="c-tag-list">
-          <h2>Tags</h2>
+          <h2 class="c-list-title">Tags</h2>
           <ul class="_list">
             <li
               v-for="(tag, index) in tagList"
@@ -128,6 +128,18 @@ export default {
 </script>
 
 <style lang="scss">
+.c-list-title {
+  color: $color-middlegray;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  ._icon {
+    font-size: 1rem;
+    margin-right: 0.1rem;
+  }
+}
+
 .c-search-box {
   position: relative;
   margin-bottom: 1.5rem;
