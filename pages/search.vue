@@ -185,6 +185,7 @@ export default {
       }
 
       ._tag-name {
+        position: relative;
         z-index: 10;
       }
 
