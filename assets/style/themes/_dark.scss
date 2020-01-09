@@ -19,6 +19,10 @@
       }
     }
 
+    .c-list-title {
+      color: $color-middlegray;
+    }
+
     .c-post-body {
       code {
         background-color: $color-dark-lightgray;
@@ -53,6 +57,10 @@
     ._path {
       fill: $color-white;
     }
+  }
+
+  .c-list-title {
+    color: $color-middlegray;
   }
 
   .c-post-body {

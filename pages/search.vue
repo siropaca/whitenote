@@ -117,7 +117,7 @@ export default {
             (item) => item.slug === self.slug
           )[0]
 
-          this.searchRsultTitle = result.value
+          this.searchRsultTitle = 'Tags: ' + result.value
         })
         .catch((e) => {
           // const res = e.response
@@ -129,15 +129,9 @@ export default {
 
 <style lang="scss">
 .c-list-title {
-  color: $color-middlegray;
   font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 1px;
-
-  ._icon {
-    font-size: 1rem;
-    margin-right: 0.1rem;
-  }
 }
 
 .c-search-box {

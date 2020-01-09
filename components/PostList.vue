@@ -67,15 +67,9 @@ export default {
 
 <style lang="scss">
 .c-list-title {
-  color: $color-middlegray;
   font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 1px;
-
-  ._icon {
-    font-size: 1rem;
-    margin-right: 0.1rem;
-  }
 }
 
 .c-post-list {
@@ -199,7 +193,7 @@ export default {
       ._date {
         font-size: 0.8rem;
         letter-spacing: 3px;
-        opacity: 0.8;
+        color: $color-lightgray;
 
         @include media($breakpoint-pc) {
           font-size: 0.7rem;
