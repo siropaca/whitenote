@@ -136,7 +136,7 @@ export default {
           description: 'This is my personal feed!',
           language: 'ja',
           author: {
-            name: 'Siropaca'
+            name: 'siropaca'
           },
           copyright: 'All rights reserved 2019, Siropaca'
         }
@@ -163,7 +163,7 @@ export default {
         })
 
         feed.addContributor({
-          name: 'Siropaca',
+          name: 'siropaca',
           link: 'https://s10i.me/whitenote/'
         })
 
