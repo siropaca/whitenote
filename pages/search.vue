@@ -117,7 +117,7 @@ export default {
             (item) => item.slug === self.slug
           )[0]
 
-          this.searchRsultTitle = 'Tags: ' + result.value
+          this.searchRsultTitle = 'Tag: ' + result.value
         })
         .catch((e) => {
           // const res = e.response
