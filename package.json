@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "NUXT_HOST=0.0.0.0 nuxt",
-    "start": "run-s build 'killport 3000' serve",
+    "start": "run-s build serve",
     "build": "nuxt build",
     "serve": "nohup nuxt start >/dev/null 2>&1 </dev/null &",
     "generate": "nuxt generate",
