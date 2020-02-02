@@ -41,7 +41,6 @@ export default {
   left: 0;
   right: 0;
   z-index: 100;
-  backdrop-filter: blur(5px);
 
   @include media($breakpoint-tablet) {
     position: sticky;
