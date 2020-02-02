@@ -4,7 +4,7 @@
       <i class="fas fa-bars"></i>
     </div>
 
-    <ul class="_list js-menu-list" :style="menuListStyle" @click="closeMenu">
+    <ul class="_list js-menu-list" :class="menuListClass" @click="closeMenu">
       <li
         v-for="(item, index) in menuList"
         :key="index"
@@ -43,7 +43,7 @@ export default {
           listClass: ''
         }
       ],
-      menuListStyle: {}
+      menuListClass: ''
     }
   },
   methods: {
@@ -58,9 +58,7 @@ export default {
       this.closeMenu()
     },
     openMenu() {
-      this.menuListStyle = {
-        display: 'flex'
-      }
+      this.menuListClass = '-show'
 
       const listItem = document.querySelectorAll('.js-menu-list li')
       listItem.forEach((el, index) => {
@@ -82,7 +80,7 @@ export default {
 
           if (index + 1 === listItem.length) {
             setTimeout(() => {
-              this.menuListStyle = {}
+              this.menuListClass = '-hide'
             }, 500)
           }
         }, index * 150)
@@ -94,7 +92,12 @@ export default {
 
 <style lang="scss">
 .c-humburger {
+  ._icon {
+    padding-right: 0 !important;
+  }
+
   ._list {
+    opacity: 0;
     display: none;
     justify-content: center;
     flex-direction: column;
@@ -107,7 +110,36 @@ export default {
     height: 100vh;
     overflow: scroll;
     text-align: center;
-    opacity: 0.9;
+
+    &.-show {
+      display: flex;
+      opacity: 0.9;
+      animation: show 0.2s linear 0s;
+    }
+
+    &.-hide {
+      display: none;
+      opacity: 0;
+      animation: hide 1s linear 0s;
+    }
+
+    @keyframes show {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 0.9;
+      }
+    }
+
+    @keyframes hide {
+      from {
+        opacity: 0.9;
+      }
+      to {
+        opacity: 0;
+      }
+    }
 
     li {
       transition: 0.15s;

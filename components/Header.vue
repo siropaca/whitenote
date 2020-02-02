@@ -65,8 +65,8 @@ export default {
 
       ._icon {
         display: inline-block;
-        font-size: 1.4rem;
-        padding: 0 0.7rem;
+        font-size: 1.5rem;
+        padding: 0 0.5rem;
         height: 2.5rem;
         width: 2.5rem;
         line-height: 2.5rem;
