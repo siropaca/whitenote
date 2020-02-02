@@ -6,9 +6,9 @@
   "private": true,
   "scripts": {
     "dev": "NUXT_HOST=0.0.0.0 nuxt",
-    "serve": "run-s build start",
+    "start": "run-s build 'killport 3000' serve",
     "build": "nuxt build",
-    "start": "nohup nuxt start >/dev/null 2>&1 </dev/null &",
+    "serve": "nohup nuxt start >/dev/null 2>&1 </dev/null &",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
