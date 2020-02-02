@@ -94,8 +94,8 @@ export default {
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(2.5px);
+      background-color: rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(3px);
     }
 
     ._post-info {

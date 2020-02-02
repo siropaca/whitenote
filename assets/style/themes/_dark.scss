@@ -11,6 +11,13 @@
           color: $color-white;
         }
       }
+
+      .c-humburger {
+        ._list {
+          background: $color-black;
+          color: $color-white;
+        }
+      }
     }
 
     .c-site-logo {
@@ -48,6 +55,13 @@
 
     ._contents {
       a {
+        color: $color-white;
+      }
+    }
+
+    .c-humburger {
+      ._list {
+        background: $color-dark-gray;
         color: $color-white;
       }
     }

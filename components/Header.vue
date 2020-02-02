@@ -6,9 +6,13 @@
           <SiteLogo />
         </nuxt-link>
 
-        <nuxt-link :to="{ name: 'search' }">
-          <i class="fas fa-search"></i>
-        </nuxt-link>
+        <div class="_icons">
+          <!-- <nuxt-link :to="{ name: 'search' }" class="_icon">
+            <i class="fas fa-search"></i>
+          </nuxt-link> -->
+
+          <HamburgerMenu />
+        </div>
       </div>
     </div>
   </header>
@@ -16,10 +20,12 @@
 
 <script>
 import SiteLogo from '~/components/SiteLogo.vue'
+import HamburgerMenu from '~/components/HamburgerMenu.vue'
 
 export default {
   components: {
-    SiteLogo
+    SiteLogo,
+    HamburgerMenu
   }
 }
 </script>
@@ -54,10 +60,22 @@ export default {
     align-items: center;
     justify-content: space-between;
 
-    .fas {
-      font-size: 1.4rem;
-      padding: 0 0.5rem;
-      vertical-align: middle;
+    ._icons {
+      display: flex;
+
+      ._icon {
+        display: inline-block;
+        font-size: 1.4rem;
+        padding: 0 0.7rem;
+        height: 2.5rem;
+        width: 2.5rem;
+        line-height: 2.5rem;
+        text-align: center;
+
+        .fas {
+          cursor: pointer;
+        }
+      }
     }
   }
 }
