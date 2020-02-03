@@ -72,12 +72,12 @@ export default {
   },
   head() {
     return {
-      title: 'Privacy Policy',
+      title: 'PrivacyPolicy',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: 'プライバシーポリシー'
         }
       ]
     }
