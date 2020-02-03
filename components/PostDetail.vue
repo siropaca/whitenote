@@ -9,15 +9,15 @@
           <h1 class="_title">{{ post.title }}</h1>
           <time class="_date">{{ post.post_date | fmtDate }}</time>
           <div v-if="post.tags" class="_tags">
-            <a
-              v-for="(category, index) in makeCatAry(post.tags)"
+            <nuxt-link
+              v-for="(tag, index) in createTagAry(post.tags)"
               :key="index"
-              class="_category-item"
-              href="#"
+              class="_tag-item"
+              to="/"
             >
               <i class="fas fa-tag"></i>
-              {{ category }}
-            </a>
+              {{ tag }}
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@ export default {
     }
   },
   methods: {
-    makeCatAry(tags) {
+    createTagAry(tags) {
       return tags ? tags.split(',') : []
     }
   }
@@ -147,7 +147,7 @@ export default {
         }
       }
 
-      ._category-item {
+      ._tag-item {
         color: $color-white;
         text-decoration: none;
         font-size: 0.65rem;
