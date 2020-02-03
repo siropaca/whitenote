@@ -25,7 +25,7 @@
 
     <div class="o-container">
       <div class="o-inner -s">
-        <PostBody :contents="post.contents" />
+        <PostBody v-html="$md.render(post.contents)" />
       </div>
     </div>
   </main>

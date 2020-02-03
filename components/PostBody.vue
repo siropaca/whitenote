@@ -1,19 +1,13 @@
 <template>
-  <div class="c-post-body js-post-body" v-html="$md.render(contents)"></div>
+  <div class="c-post-body js-post-body">
+    <slot />
+  </div>
 </template>
 
 <script>
 import '~/node_modules/highlight.js/styles/hopscotch.css'
 
 export default {
-  props: {
-    contents: {
-      type: String,
-      default: () => {
-        return ''
-      }
-    }
-  },
   mounted() {
     const self = this
     self.getATag().forEach((el) => {
@@ -70,12 +64,19 @@ export default {
     padding-bottom: 0;
   }
 
+  h1 {
+    font-size: 1.7rem;
+    line-height: 1.7rem;
+    font-weight: bold;
+    margin: 0 0 1.4rem 0;
+  }
+
   h2 {
-    margin: 2.5em 0 1rem 0;
+    margin: 2.5rem 0 1rem 0;
     font-size: 1.2rem;
     font-weight: bold;
     position: relative;
-    padding-left: 1rem;
+    padding-left: 1.1rem;
 
     &::before {
       content: '';
