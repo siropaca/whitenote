@@ -11,7 +11,7 @@
             <i class="fas fa-search"></i>
           </nuxt-link> -->
 
-          <HamburgerMenu />
+          <Hamburger />
         </div>
       </div>
     </div>
@@ -20,12 +20,12 @@
 
 <script>
 import SiteLogo from '~/components/SiteLogo.vue'
-import HamburgerMenu from '~/components/HamburgerMenu.vue'
+import Hamburger from '~/components/Hamburger.vue'
 
 export default {
   components: {
     SiteLogo,
-    HamburgerMenu
+    Hamburger
   }
 }
 </script>

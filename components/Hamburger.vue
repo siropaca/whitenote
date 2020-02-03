@@ -39,7 +39,7 @@ export default {
         },
         {
           listName: 'Privacy Policy',
-          pageName: 'privacyPolicy',
+          pageName: 'privacy',
           listClass: ''
         }
       ],
