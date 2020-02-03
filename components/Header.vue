@@ -35,7 +35,7 @@ export default {
   display: flex;
   align-items: center;
   padding: 0 0.9rem;
-  height: $header-height;
+  height: $header-height-s;
   position: relative;
   top: 0;
   left: 0;
@@ -47,6 +47,7 @@ export default {
   }
 
   @include media($breakpoint-pc) {
+    height: $header-height-m;
     position: sticky;
   }
 
@@ -70,6 +71,10 @@ export default {
         width: 2.5rem;
         line-height: 2.5rem;
         text-align: center;
+
+        @include media($breakpoint-pc) {
+          font-size: 1.7rem;
+        }
 
         .fas {
           cursor: pointer;

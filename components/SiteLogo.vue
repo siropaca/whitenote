@@ -20,5 +20,9 @@
   height: 1.65rem;
   width: auto;
   margin-bottom: -6px;
+
+  @include media($breakpoint-pc) {
+    height: 1.7rem;
+  }
 }
 </style>
