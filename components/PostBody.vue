@@ -130,6 +130,11 @@ export default {
     font-weight: bold;
   }
 
+  em {
+    font-size: 0.95rem;
+    opacity: 0.7;
+  }
+
   p {
     margin-bottom: 1.5rem;
 
