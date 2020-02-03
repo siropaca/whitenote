@@ -48,13 +48,13 @@ export default {
         content: ''
       }
     ],
-    script: [
-      {
-        'data-ad-client': 'ca-pub-2267300810538312',
-        async: true,
-        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
-      }
-    ],
+    // script: [
+    //   {
+    //     'data-ad-client': 'ca-pub-2267300810538312',
+    //     async: true,
+    //     src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+    //   }
+    // ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/whitenote/favicon.ico' },
       { rel: 'apple-touch-icon', href: '/whitenote/apple-touch-icon.png' },
@@ -136,7 +136,7 @@ export default {
           description: 'This is my personal feed!',
           language: 'ja',
           author: {
-            name: 'Siropaca'
+            name: 'siropaca'
           },
           copyright: 'All rights reserved 2019, Siropaca'
         }
@@ -163,7 +163,7 @@ export default {
         })
 
         feed.addContributor({
-          name: 'Siropaca',
+          name: 'siropaca',
           link: 'https://s10i.me/whitenote/'
         })
 
