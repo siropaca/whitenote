@@ -41,12 +41,18 @@ export default {
 
 <style lang="scss">
 .c-post-body {
-  $side-padding: 1rem;
+  $side-padding-s: 1rem;
+  $side-padding-m: 2rem;
 
-  padding: 2rem $side-padding;
+  padding: 2rem $side-padding-s;
   line-height: 1.8;
   word-break: break-word;
   overflow: hidden;
+
+  @include media($breakpoint-tablet) {
+    padding-right: $side-padding-m;
+    padding-left: $side-padding-m;
+  }
 
   @include media($breakpoint-pc) {
     padding-right: 0;
@@ -172,8 +178,13 @@ export default {
   }
 
   .-full {
-    margin-right: -$side-padding !important;
-    margin-left: -$side-padding !important;
+    margin-right: -$side-padding-s !important;
+    margin-left: -$side-padding-s !important;
+
+    @include media($breakpoint-tablet) {
+      margin-right: -$side-padding-m !important;
+      margin-left: -$side-padding-m !important;
+    }
 
     @include media($breakpoint-pc) {
       margin-right: 0 !important;
@@ -218,11 +229,18 @@ export default {
     margin-bottom: 1.5rem;
 
     dt {
-      font-weight: 600;
+      font-weight: bold;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
     }
 
     dd {
       padding-left: 1rem;
+      margin-bottom: 0.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 

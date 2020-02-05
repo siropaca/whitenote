@@ -43,7 +43,7 @@ export default {
           listClass: ''
         }
       ],
-      menuListClass: ''
+      menuListClass: '-hide'
     }
   },
   methods: {
@@ -72,7 +72,6 @@ export default {
     },
     closeMenu() {
       const listItem = document.querySelectorAll('.js-menu-list li')
-
       listItem.forEach((el, index) => {
         setTimeout(() => {
           el.style.left = '2rem'
@@ -121,7 +120,6 @@ export default {
     &.-hide {
       display: none;
       opacity: 0;
-      animation: hide 1s linear 0s;
     }
 
     @keyframes show {
@@ -130,15 +128,6 @@ export default {
       }
       to {
         opacity: 0.9;
-      }
-    }
-
-    @keyframes hide {
-      from {
-        opacity: 0.9;
-      }
-      to {
-        opacity: 0;
       }
     }
 
