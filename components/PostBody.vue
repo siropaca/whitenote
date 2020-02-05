@@ -247,27 +247,27 @@ export default {
     &.note {
       opacity: 0.75;
       font-size: 0.8rem;
-      padding: 0.4rem 0.8rem 0.5rem 0.8rem;
+      padding: 0.5rem 0.8rem;
       border: solid 1px;
       border-radius: $border-radius;
       line-height: 1.4rem;
 
       dt {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         letter-spacing: 0;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.1rem;
 
         &::before {
           content: '【';
           display: inline-block;
-          margin-right: 0.1rem;
+          margin-right: 0.15rem;
           margin-left: -0.5rem;
         }
 
         &::after {
           content: '】';
           display: inline-block;
-          margin-left: 0.1rem;
+          margin-left: 0.15rem;
         }
       }
 
