@@ -31,6 +31,17 @@
     }
 
     .c-post-body {
+      blockquote {
+        border-left-color: $color-gray;
+        color: $color-middlegray;
+      }
+
+      dl {
+        &.note {
+          color: $color-middlegray;
+        }
+      }
+
       code {
         background-color: $color-dark-lightgray;
       }
@@ -78,6 +89,17 @@
   }
 
   .c-post-body {
+    blockquote {
+      border-left-color: $color-gray;
+      color: $color-middlegray;
+    }
+
+    dl {
+      &.note {
+        color: $color-middlegray;
+      }
+    }
+
     code {
       background-color: $color-dark-lightgray;
     }

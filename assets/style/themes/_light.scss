@@ -30,6 +30,17 @@
   }
 
   .c-post-body {
+    blockquote {
+      border-left-color: $color-middlegray;
+      color: $color-gray;
+    }
+
+    dl {
+      &.note {
+        color: $color-gray;
+      }
+    }
+
     code {
       background-color: $color-lightgray;
     }

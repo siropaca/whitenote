@@ -47,7 +47,6 @@ export default {
   padding: 2rem $side-padding-s;
   line-height: 1.8;
   word-break: break-word;
-  overflow: hidden;
 
   @include media($breakpoint-tablet) {
     padding-right: $side-padding-m;
@@ -154,6 +153,8 @@ export default {
   }
 
   a {
+    font-weight: 600;
+
     &:hover {
       .fa-external-link-alt {
         display: inline-block;
@@ -171,6 +172,8 @@ export default {
     width: 100%;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius: $border-radius;
   }
 
   .-border {
@@ -194,14 +197,33 @@ export default {
     img {
       border-right: none;
       border-left: none;
+      border-radius: 0;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+
+      @include media($breakpoint-tablet) {
+        border-radius: 0;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+      }
+
+      @include media($breakpoint-pc) {
+        border-radius: $border-radius;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+      }
     }
   }
 
   blockquote {
-    border-left: solid 0.3rem $color-middlegray;
-    padding: 0.3rem 1rem;
-    margin-bottom: 1.5rem;
-    opacity: 0.6;
+    padding: 0.3rem 1rem 0.4rem 1rem;
+    margin: 0 1rem 1.5rem 1rem;
+    border-left: solid 0.25rem;
+
+    @include media($breakpoint-tablet) {
+      margin: 0 1rem 1.5rem 1rem;
+    }
+
+    @include media($breakpoint-pc) {
+      margin: 0 1rem 1.5rem 1rem;
+    }
   }
 
   table {
@@ -245,34 +267,38 @@ export default {
     }
 
     &.note {
-      opacity: 0.75;
       font-size: 0.8rem;
-      padding: 0.5rem 0.8rem;
-      border: solid 1px;
       border-radius: $border-radius;
-      line-height: 1.4rem;
+      line-height: 1.5rem;
+      padding: 0;
 
       dt {
-        font-size: 0.9rem;
+        display: inline-block;
+        font-size: 0.8rem;
         letter-spacing: 0;
-        margin-bottom: 0.1rem;
+        margin-bottom: 0.4rem;
+        padding: 0 0.3rem 0 0.3rem;
+        border-bottom: solid 1px;
 
-        &::before {
-          content: '【';
+        &:before {
+          content: '\f303';
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
           display: inline-block;
-          margin-right: 0.15rem;
-          margin-left: -0.5rem;
-        }
-
-        &::after {
-          content: '】';
-          display: inline-block;
-          margin-left: 0.15rem;
+          font-style: normal;
+          -webkit-font-feature-settings: normal;
+          font-feature-settings: normal;
+          font-variant: normal;
+          text-rendering: auto;
+          line-height: 1;
+          margin-right: 0.35rem;
         }
       }
 
       dd {
-        padding-left: 0;
+        padding: 0;
         margin-bottom: 0;
       }
     }
