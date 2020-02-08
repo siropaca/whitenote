@@ -26,7 +26,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: ''
+          content: 'siropaca の技術ブログです。'
         }
       ]
     }
