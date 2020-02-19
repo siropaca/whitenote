@@ -21,7 +21,10 @@ export default {
   head() {
     let desc = this.post.contents
     if (desc) {
-      desc = desc.replace(/(```(.|\s)*?```|`|\r?\n)/g, '').slice(0, 200)
+      desc = desc
+        .replace(/(```(.|\s)*?```|`)/g, '')
+        .replace(/(\r?\n)/g, ' ')
+        .slice(0, 200)
     }
     return {
       title: this.post.title,
