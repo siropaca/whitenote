@@ -114,6 +114,10 @@ export default {
         list-style-type: circle;
       }
     }
+
+    a {
+      display: block;
+    }
   }
 
   hr {
