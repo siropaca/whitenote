@@ -1,5 +1,6 @@
 <template>
   <div class="c-post-body js-post-body">
+    <!-- コンテンツ -->
     <slot />
   </div>
 </template>
@@ -10,7 +11,7 @@ import '~/node_modules/highlight.js/styles/hopscotch.css'
 export default {
   mounted() {
     const self = this
-    self.getATag().forEach((el) => {
+    self.getAnchor().forEach((el) => {
       el.addEventListener('click', self.openNewWin)
 
       const i = document.createElement('i')
@@ -20,20 +21,20 @@ export default {
   },
   destroyed() {
     const self = this
-    self.getATag().forEach((el) => {
+    self.getAnchor().forEach((el) => {
       el.removeEventListener('click', self.openNewWin)
     })
   },
   methods: {
-    getATag() {
+    getAnchor() {
       return document
         .getElementsByClassName('js-post-body')[0]
         .querySelectorAll('a')
     },
     openNewWin(e) {
       e.preventDefault()
-      const url = e.target.getAttribute('href')
-      window.open(url)
+      const href = e.target.getAttribute('href')
+      window.open(href)
     }
   }
 }
@@ -101,7 +102,7 @@ export default {
     font-weight: bold;
   }
 
-  > ul {
+  ul {
     margin-bottom: 1.5rem;
     padding-left: 1.6rem;
     list-style: disc;

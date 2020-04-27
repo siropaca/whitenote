@@ -25,7 +25,14 @@
 
     <div class="o-container">
       <div class="o-inner -s">
-        <PostBody v-html="$md.render(post.contents)" />
+        <div>
+          <PostBody>
+            <!-- アウトライン -->
+            <!-- <div class="c-outline js-outline-output"></div> -->
+            <!-- コンテンツ -->
+            <div v-html="$md.render(post.contents)"></div>
+          </PostBody>
+        </div>
       </div>
     </div>
   </main>
@@ -55,6 +62,12 @@ export default {
       }
     }
   },
+  mounted() {
+    // const outliner = this.$documentOutliner('.js-post-body')
+    // outliner.makeList('.js-outline-output', {
+    //   link: false
+    // })
+  },
   methods: {
     createTagAry(tags) {
       return tags ? tags.split(',') : []
@@ -64,6 +77,30 @@ export default {
 </script>
 
 <style lang="scss">
+.c-outline {
+  border: 1px solid #b9b5b8;
+  border-radius: 5px;
+  padding: 0.9rem 1.3rem 1rem 1.3rem !important;
+  background: #282c34;
+  color: #b9b5b8;
+
+  margin-bottom: 1.5rem;
+  line-height: 1.75rem;
+
+  .level-1 > li {
+    font-weight: bold;
+  }
+
+  .level-2 {
+    padding-left: 1.7rem;
+    font-weight: normal;
+  }
+  .level-3 {
+    padding-left: 1.7rem;
+    font-weight: normal;
+  }
+}
+
 .c-post-detail {
   ._post-header {
     padding-top: 55%;

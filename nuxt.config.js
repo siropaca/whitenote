@@ -78,7 +78,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~plugins/ga.js', ssr: false }],
+  plugins: [
+    { src: '~/plugins/ga.js', mode: 'client'},
+    { src: '~/plugins/outliner.js', mode: 'client'}
+  ],
   /*
    ** Nuxt.js dev-modules
    */
