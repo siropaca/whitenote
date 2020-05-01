@@ -22,8 +22,8 @@ export default {
     let desc = this.post.contents
     if (desc) {
       desc = desc
-        .replace(/(```(.|\s)*?```|`)|(!?\[.*\)?[)|*}])|( *?$)/g, '')
-        .replace(/\r?\n/g, ' ')
+        .replace(/(```(.|\s)*?```|`)|(!?\[.*\)?[)|*}])/g, '')
+        .replace(/\s*\r?\n/g, ' ')
         .slice(0, 200)
     }
     return {
