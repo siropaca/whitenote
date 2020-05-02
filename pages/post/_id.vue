@@ -33,12 +33,12 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://s10i.me/whitenote/post/${this.post.id}`
+          content: `${process.env.BASE_URL}/post/${this.post.id}`
         },
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.post.title} - WhiteNote`
+          content: `${this.post.title} - ${process.env.SITE_NAME}`
         },
         {
           hid: 'og:image',
@@ -60,7 +60,7 @@ export default {
   },
   asyncData({ params, error }) {
     return axios
-      .get(`https://s10i.me/api/v1/posts/${params.id}`, {
+      .get(`${process.env.BASE_API_URL}/posts/${params.id}`, {
         headers: { 'x-api-key': process.env.API_KEY }
       })
       .then((res) => {

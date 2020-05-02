@@ -68,7 +68,7 @@ export default {
   },
   asyncData({ query, params, error }) {
     return axios
-      .get('https://s10i.me/api/v1/tags', {
+      .get(`${process.env.BASE_API_URL}/tags`, {
         headers: { 'x-api-key': process.env.API_KEY }
       })
       .then((res) => {
@@ -102,7 +102,7 @@ export default {
     },
     getTagDetail() {
       axios
-        .get(`https://s10i.me/api/v1/search`, {
+        .get(`${process.env.BASE_API_URL}/search`, {
           headers: { 'x-api-key': process.env.API_KEY },
           params: {
             tag: this.slug

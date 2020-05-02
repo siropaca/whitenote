@@ -4,14 +4,14 @@ require('dotenv').config({ path: `config/.env.${process.env.NODE_ENV}` })
 
 export default {
   mode: 'universal',
-  /*
-   ** Headers of the page
+  /**
+   * Headers of the page
    */
   head: {
     htmlAttrs: {
       prefix: 'og: http://ogp.me/ns#'
     },
-    titleTemplate: '%s - WhiteNote',
+    titleTemplate: `%s - ${process.env.SITE_NAME}`,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-widthf, initial-scale=1' },
@@ -24,18 +24,18 @@ export default {
         name: 'google-site-verification',
         content: 'MVMDNQVr5eFOn_a11sAFxAqVEyz2jjfKYa98b2CYwgM'
       },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'WhiteNote' },
+      { hid: 'og:site_name', property: 'og:site_name', content: process.env.SITE_NAME },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://s10i.me/whitenote/'
+        content: `${process.env.BASE_URL}/`
       },
-      { hid: 'og:title', property: 'og:title', content: 'WhiteNote' },
+      { hid: 'og:title', property: 'og:title', content: process.env.SITE_NAME },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://s10i.me/whitenote/ogp.png'
+        content: `${process.env.BASE_URL}/ogp.png`
       },
       {
         hid: 'og:description',
@@ -64,33 +64,33 @@ export default {
       }
     ]
   },
-  /*
-   ** Customize the progress-bar color
+  /**
+   * Customize the progress-bar color
    */
   loading: { color: '#2c75b6' },
-  /*
-   ** Global CSS
+  /**
+   * Global CSS
    */
   css: [
     '~/node_modules/@fortawesome/fontawesome-free/css/all.min.css',
     '~/assets/style/main.scss'
   ],
-  /*
-   ** Plugins to load before mounting the App
+  /**
+   * Plugins to load before mounting the App
    */
   plugins: [
     { src: '~/plugins/ga.js', mode: 'client' },
     { src: '~/plugins/outliner.js', mode: 'client' }
   ],
-  /*
-   ** Nuxt.js dev-modules
+  /**
+   * Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module'
   ],
-  /*
-   ** Nuxt.js modules
+  /**
+   * Nuxt.js modules
    */
   modules: [
     // Doc: https://github.com/nuxt-community/dotenv-module
@@ -107,12 +107,12 @@ export default {
     '@nuxtjs/feed'
   ],
   sitemap: {
-    hostname: 'https://s10i.me/',
+    hostname: `${process.env.HOST_NAME}/`,
     path: '/sitemap.xml',
     exclude: ['/search'],
     routes(callback) {
       axios
-        .get('https://s10i.me/api/v1/sitemap', {
+        .get(`${process.env.BASE_API_URL}/sitemap`, {
           headers: { 'x-api-key': process.env.API_KEY }
         })
         .then((res) => {
@@ -135,19 +135,19 @@ export default {
       path: '/feed.xml',
       async create(feed) {
         feed.options = {
-          title: 'WhiteNote',
-          id: 'https://s10i.me/whitenote/',
-          link: 'https://s10i.me/whitenote/feed.xml',
+          title: process.env.SITE_NAME,
+          id: `${process.env.BASE_URL}/`,
+          link: `${process.env.BASE_URL}/feed.xml`,
           description: 'This is my personal feed!',
           language: 'ja',
           author: {
-            name: 'siropaca'
+            name: process.env.AUTHOR
           },
-          copyright: 'All rights reserved 2019, Siropaca'
+          copyright: `All rights reserved 2019, ${process.env.AUTHOR}`
         }
 
         const posts = await axios
-          .get('https://s10i.me/api/v1/posts/', {
+          .get(`${process.env.BASE_API_URL}/posts/`, {
             headers: { 'x-api-key': process.env.API_KEY }
           })
           .then((res) => {
@@ -157,7 +157,7 @@ export default {
         posts.forEach((post) => {
           feed.addItem({
             title: post.title,
-            link: `https://s10i.me/whitenote/post/${post.id}`,
+            link: `${process.env.BASE_URL}/post/${post.id}`,
             description:
               post.description ||
               post.contents
@@ -170,8 +170,8 @@ export default {
         })
 
         feed.addContributor({
-          name: 'siropaca',
-          link: 'https://s10i.me/whitenote/'
+          name: process.env.AUTHOR,
+          link: `${process.env.BASE_URL}/`
         })
 
         feed.addCategory('blog')
@@ -213,8 +213,8 @@ export default {
       'markdown-it-attrs'
     ]
   },
-  /*
-   ** Build configuration
+  /**
+   * Build configuration
    */
   build: {
     postcss: {
@@ -224,8 +224,8 @@ export default {
         }
       }
     },
-    /*
-     ** You can extend webpack config here
+    /**
+     * You can extend webpack config here
      */
     extend(config, ctx) {},
     optimization: {

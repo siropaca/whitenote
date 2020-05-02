@@ -21,12 +21,12 @@ export default {
   head() {
     return {
       titleTemplate: null,
-      title: 'WhiteNote',
+      title: process.env.SITE_NAME,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'siropaca の技術ブログです。'
+          content: `${process.env.AUTHOR}の技術ブログです。`
         }
       ]
     }
@@ -38,7 +38,7 @@ export default {
   },
   asyncData({ params, error }) {
     return axios
-      .get('https://s10i.me/api/v1/posts', {
+      .get(`${process.env.BASE_API_URL}/posts`, {
         headers: { 'x-api-key': process.env.API_KEY }
       })
       .then((res) => {
