@@ -1,6 +1,6 @@
 import axios from 'axios'
 import TerserPlugin from 'terser-webpack-plugin'
-require('dotenv').config()
+require('dotenv').config({ path: `config/.env.${process.env.NODE_ENV}` })
 
 export default {
   mode: 'universal',
@@ -93,10 +93,6 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
-    '@nuxtjs/sitemap',
-    // Doc: https://www.npmjs.com/package/@nuxtjs/feed
-    '@nuxtjs/feed',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Doc: https://axios.nuxtjs.org/usage
@@ -104,7 +100,11 @@ export default {
     // Doc: https://github.com/nuxt-community/style-resources-module
     '@nuxtjs/style-resources',
     // Doc: https://www.npmjs.com/package/markdown-it
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    // Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
+    '@nuxtjs/sitemap',
+    // Doc: https://www.npmjs.com/package/@nuxtjs/feed
+    '@nuxtjs/feed'
   ],
   sitemap: {
     hostname: 'https://s10i.me/',
@@ -112,10 +112,12 @@ export default {
     exclude: ['/search'],
     routes(callback) {
       axios
-        .get('https://s10i.me/api/v1/sitemap')
+        .get('https://s10i.me/api/v1/sitemap', {
+          headers: { 'x-api-key': process.env.API_KEY }
+        })
         .then((res) => {
-          const routes = res.data.map((posts) => {
-            return '/posts/' + posts.id
+          const routes = res.data.map((post) => {
+            return '/post/' + post.id
           })
           callback(null, routes)
         })
@@ -145,7 +147,9 @@ export default {
         }
 
         const posts = await axios
-          .get(`https://s10i.me/api/v1/posts/`)
+          .get('https://s10i.me/api/v1/posts/', {
+            headers: { 'x-api-key': process.env.API_KEY }
+          })
           .then((res) => {
             return res.data
           })
@@ -153,13 +157,13 @@ export default {
         posts.forEach((post) => {
           feed.addItem({
             title: post.title,
-            link: `https://s10i.me/whitenote/posts/${post.id}`,
+            link: `https://s10i.me/whitenote/post/${post.id}`,
             description:
               post.description ||
               post.contents
-                .replace(/(```(.|\s)*?```|`|\r?\n)/g, '')
+                .replace(/```(.|\s)*?```|`|!?\[.*\)?[)|*}]|\r?\n/g, '')
                 .slice(0, 110) + ' [&#8230;]',
-            content: post.contents.replace(/(```(.|\s)*?```|`)/g, ''),
+            content: post.contents.replace(/```(.|\s)*?```|`|!?\[.*\)?[)|*}]/g, ''),
             date: new Date(post.post_date),
             image: post.url
           })
@@ -178,7 +182,7 @@ export default {
   ],
   dotenv: {
     path: './config/',
-    filename: process.env.NODE_ENV === 'production' ? '.env.prod' : '.env.dev'
+    filename: `.env.${process.env.NODE_ENV}`
   },
   axios: {},
   styleResources: {

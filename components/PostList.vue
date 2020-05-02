@@ -14,7 +14,7 @@
           @touchend="onTouchend"
         >
           <nuxt-link
-            :to="{ name: 'posts-id', params: { id: post.id } }"
+            :to="{ name: 'post-id', params: { id: post.id } }"
             no-prefetch
           >
             <img :src="post.url" :alt="post.alt" />

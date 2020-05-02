@@ -38,7 +38,7 @@ export default {
   },
   asyncData({ params, error }) {
     return axios
-      .get(`https://s10i.me/api/v1/posts`, {
+      .get('https://s10i.me/api/v1/posts', {
         headers: { 'x-api-key': process.env.API_KEY }
       })
       .then((res) => {

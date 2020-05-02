@@ -22,7 +22,7 @@ export default {
     let desc = this.post.contents
     if (desc) {
       desc = desc
-        .replace(/(```(.|\s)*?```|`)|(!?\[.*\)?[)|*}])/g, '')
+        .replace(/```(.|\s)*?```|`|!?\[.*\)?[)|*}]/g, '')
         .replace(/\s*\r?\n/g, ' ')
         .slice(0, 200)
     }
@@ -33,7 +33,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://s10i.me/whitenote/posts/${this.post.id}`
+          content: `https://s10i.me/whitenote/post/${this.post.id}`
         },
         {
           hid: 'og:title',
