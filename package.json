@@ -8,7 +8,7 @@
     "dev": "NUXT_HOST=0.0.0.0 nuxt",
     "start": "run-s build serve",
     "build": "nuxt build",
-    "serve": "nohup nuxt start >/dev/null 2>&1 </dev/null &",
+    "serve": "nohup nuxt start >/dev/null 2>&1 &",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
