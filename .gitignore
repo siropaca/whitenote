@@ -58,7 +58,7 @@ typings/
 
 # dotenv environment variables file
 .env
-config
+config/*
 foreverconfig.json
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -92,3 +92,5 @@ sw.*
 
 # Vim swap files
 *.swp
+
+!.gitkeep
