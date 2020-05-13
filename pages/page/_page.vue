@@ -22,6 +22,12 @@ export default {
     PostList,
     Pagenation
   },
+  validate({ params }) {
+    if (!/^\d+$/.test(params.page)) {
+      throw new Error('Bad Request')
+    }
+    return true
+  },
   head() {
     return {
       titleTemplate: null,
@@ -42,7 +48,7 @@ export default {
   },
   asyncData({ params, error }) {
     return axios
-      .get(`${process.env.BASE_API_URL}/posts?page=1`, {
+      .get(`${process.env.BASE_API_URL}/posts?page=${params.page}`, {
         headers: { 'x-api-key': process.env.API_KEY }
       })
       .then((res) => {
