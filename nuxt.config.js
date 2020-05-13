@@ -24,7 +24,11 @@ export default {
         name: 'google-site-verification',
         content: 'MVMDNQVr5eFOn_a11sAFxAqVEyz2jjfKYa98b2CYwgM'
       },
-      { hid: 'og:site_name', property: 'og:site_name', content: process.env.SITE_NAME },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: process.env.SITE_NAME
+      },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       {
         hid: 'og:url',
@@ -151,7 +155,7 @@ export default {
             headers: { 'x-api-key': process.env.API_KEY }
           })
           .then((res) => {
-            return res.data
+            return res.data.posts
           })
 
         posts.forEach((post) => {
@@ -163,7 +167,10 @@ export default {
               post.contents
                 .replace(/```(.|\s)*?```|`|!?\[.*\)?[)|*}]|\r?\n/g, '')
                 .slice(0, 110) + ' [&#8230;]',
-            content: post.contents.replace(/```(.|\s)*?```|`|!?\[.*\)?[)|*}]/g, ''),
+            content: post.contents.replace(
+              /```(.|\s)*?```|`|!?\[.*\)?[)|*}]/g,
+              ''
+            ),
             date: new Date(post.post_date),
             image: post.url
           })

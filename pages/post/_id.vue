@@ -64,7 +64,7 @@ export default {
         headers: { 'x-api-key': process.env.API_KEY }
       })
       .then((res) => {
-        return { post: res.data }
+        return { post: res.data.post }
       })
       .catch((e) => {
         const res = e.response
