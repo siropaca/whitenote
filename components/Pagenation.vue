@@ -52,9 +52,17 @@ export default {
     border: 2px solid $color-primarily;
     border-radius: $border-radius;
     padding: 0.45rem 1.6rem;
-    margin: 1.2rem 0.4rem;
+    margin: 2rem 0.4rem 0.5rem 0.4rem;
     font-weight: 500;
     letter-spacing: 0.5px;
+
+    @include media($breakpoint-tablet) {
+      margin: 1.3rem 0.4rem 1.1rem 0.4rem;
+    }
+
+    @include media($breakpoint-pc) {
+      margin: 1.3rem 0.4rem 1.1rem 0.4rem;
+    }
   }
 
   ._prev {
