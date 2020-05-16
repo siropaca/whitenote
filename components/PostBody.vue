@@ -245,6 +245,7 @@ export default {
     td {
       padding: 0.5rem 0.8rem;
       border: solid 1px $color-middlegray;
+      vertical-align: middle;
     }
 
     tbody tr:nth-child(odd) {
