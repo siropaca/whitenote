@@ -28,7 +28,7 @@
     "@nuxtjs/sitemap": "^2.0.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "document-outliner": "^1.1.2",
-    "highlight.js": "^9.15.10",
+    "highlight.js": "^10.4.1",
     "markdown-it-attrs": "^3.0.1",
     "nuxt": "^2.0.0",
     "smoothscroll-polyfill": "^0.4.4"
